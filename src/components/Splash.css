@@ -1,0 +1,24 @@
+.splashContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .splashBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .splashBody .splashTitle {
+      font-size: 100px;
+  }
+  
+  .splashBody .signUp {
+    width: 150px;
+  }
+  
+  .splashBody .splashRandom {
+    width: 150px;
+    margin: 20px 0px 0px 0px;
+  }
