@@ -20,8 +20,8 @@ const SignIn = () => {
                 <h1>Sign In</h1>
                 <form className="signForm">
                     <div> 
-                        <input className="email placeColor" autoFocus placeholder="email@..."></input>
-                        <input className="passwords placeColor" placeholder="password"></input>
+                        <input className="email placeColor" autoFocus placeholder="email@..." name="email" id="email"></input>
+                        <input className="passwords placeColor" placeholder="password" name="password" id="password"></input>
                     </div>
                     <input className="btn" type="submit" onSubmit={handleSubmit} value="sign in"/>
                 </form>
