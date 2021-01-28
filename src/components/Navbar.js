@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
-import './Nav.css';
+import './Navbar.css';
 
 
 const Navbar = () => {
