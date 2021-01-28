@@ -1,0 +1,11 @@
+.navContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: flex-end;
+  }
+  
+  .navContainer .signIn {
+    width: 100px;
+    margin: 20px 30px 0px 0px;
+  }
