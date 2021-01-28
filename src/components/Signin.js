@@ -28,7 +28,6 @@ const SignIn = () => {
                 <br></br>
                 <Link to="/"><button className="back btn">back</button></Link>
             </div>
-            
         </div>
     );
 }
