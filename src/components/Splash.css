@@ -1,5 +1,6 @@
 .splashContainer {
     display: flex;
+    width: 99vw;
     align-items: center;
     flex-direction: column;
   }

@@ -1,0 +1,31 @@
+.flickContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 0px 20px;
+
+}
+
+.flickMain {
+display: flex;
+flex-direction: column;
+height: 100%;
+}
+
+.flickTitle {
+    font-size: 40px;
+}
+
+.movieCard {
+    background: linear-gradient(rgb(36, 36, 36), rgb(58, 58, 58));
+    border: 2px solid rgba(68, 166, 223, 0.2);
+    height: 80vh;
+    width: 50vw;
+    border-radius: 5px;
+}
+.movie {
+
+}
+.swipeButtons {
+
+}
+

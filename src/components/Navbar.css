@@ -1,8 +1,8 @@
 .navContainer {
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    align-items: flex-end;
+    flex-grow: 1;
+    width: 100%;
+    justify-content: flex-end;
   }
   
   .navContainer .signIn {
