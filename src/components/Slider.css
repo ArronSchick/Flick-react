@@ -1,0 +1,58 @@
+.mainSliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    padding: 5px 10px 15px 10px;
+    border-radius: 3px;
+
+}
+
+.dateTitle {
+    font-size: 25px;
+    color: rgba(163, 197, 211, 0.966);
+    font-weight: 200;
+}
+
+.sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.sliders {
+    display: flex;
+    flex-direction: column;
+}
+
+.slide {
+    width: 180px;
+}
+
+.slider1 {
+    margin-top: 10px;
+}
+
+.slider2 {
+    margin-top: 30px;
+}
+
+.sliderDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 150px;
+    margin-top: 20px;
+    border: 2px solid rgba(68, 166, 223, 0.2);
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+   
+
+}
+
+.date {
+    padding-top: 3px;
+    font-size: 25px;
+    color: rgba(163, 197, 211, 0.966);
+}

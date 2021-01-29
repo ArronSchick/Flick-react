@@ -1,18 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    Link,
   } from "react-router-dom";
 import Navbar from "./Navbar";
 import './Forms.css';
 
+const SignUp = () => {
+
 const handleSubmit = () => {
 
 }
-
-const SignUp = () => {
 
     return (
         <div className="formContainer signup">

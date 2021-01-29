@@ -1,10 +1,11 @@
 import React from "react";
-import './Flick.css'
+import './Genrelist.css'
 
 const Genrelist = () => {
     return (
-        <div>
-            <h1>Genrelist</h1>
+        <div className="genreContainer">
+            <h1 className="genreTitle">Genre</h1>
+                
         </div>
     );
 }

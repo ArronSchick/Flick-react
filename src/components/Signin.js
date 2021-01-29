@@ -1,12 +1,10 @@
 import React from "react";
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    Link,
   } from "react-router-dom";
 import Navbar from "./Navbar";
-import './Forms.css'
+import './Forms.css';
 
 const handleSubmit = () => {
 
