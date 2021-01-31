@@ -1,0 +1,51 @@
+
+.dd-wrapper {
+    width: 100%;
+}
+
+.dd-header {
+    display: flex;
+    justify-content: space-between;
+    border: solid 2px rgba(68, 166, 223, 0.3);
+    border-radius: 4px;
+    padding: 0px 5px 0px 5px;
+    width: 190px;
+    outline: none;
+}
+
+.dd-list {
+    list-style: none;
+    width: 100%;
+    padding-inline-start: 0px;
+    margin-block-end: 0em;
+    margin-block-start: 0em;
+}
+
+.dd-list-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.dd-button {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    outline: solid 2px rgba(68, 166, 223, 0);
+    font-size: 18px;
+    color: rgba(163, 197, 211, 0.966);
+    background-color: rgba(70, 151, 218, 0);
+    width: 100%;
+    padding: 10px 5px 10px 5px;
+    transition: 0.1s ease-in;
+}
+
+.dd-button:hover {
+    outline: solid 2px rgba(68, 166, 223, 0.3);
+    background-color:  rgba(97, 190, 243, 0.1);
+}
+
+.dd-button:active {
+    color: rgb(184, 171, 98);
+    background-color:  rgba(97, 190, 243, 0.4);
+}

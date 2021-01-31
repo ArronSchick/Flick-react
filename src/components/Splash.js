@@ -6,6 +6,11 @@ import {
 import './Splash.css';
 import Navbar from "./Navbar";
 
+fetch(``)
+
+const handleClick = () => {
+
+}
 
 const Splash = () => {
     return (
@@ -15,7 +20,7 @@ const Splash = () => {
                 <div className="splashBody">
                     <h1 className="splashTitle">FLICK</h1>
                     <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
-                    <button className="splashRandom btn">RANDOM MOVIE</button>
+                    <button className="splashRandom btn" onClick={handleClick}>RANDOM MOVIE</button>
                 </div>
             </div>
         </div>

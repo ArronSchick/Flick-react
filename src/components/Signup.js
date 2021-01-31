@@ -14,7 +14,6 @@ const handleSubmit = () => {
 
     return (
         <div className="formContainer signup">
-            <Navbar />
             <div className="forms">
                 <h1>Create Account</h1>
                 <form className="signForm">
@@ -27,7 +26,7 @@ const handleSubmit = () => {
                     <input className="btn" type="submit" onSubmit={handleSubmit} value="sign up"/>
                 </form>
                 <br></br>
-                <Link to="/"><button className="back btn">back</button></Link>
+                <Link to="/"><button className="back btn">BACK</button></Link>
             </div>
         </div>
     );

@@ -4,8 +4,9 @@ import './Slider.css'
 
 const Slider = () => {
 
-let minYear = 1950
-let currentYear = 2021
+const minYear = 1950
+const getDate = new Date();
+const currentYear = getDate.getFullYear();
 
 const years = {
     fromValue: 1950,
