@@ -5,15 +5,13 @@ import {
 } from "react-router-dom";
 import './Navbar.css';
 
-
 const Navbar = () => {
-// const show = true
-// const [render, setRender] = useState(show)
+
+    let signedIn = true
+
     return (
         <div className="navContainer">
-            <div className="nav">
-                <Link to="/signin"><button className="signIn btn">SIGN IN</button></Link>
-            </div>
+                {signedIn ? <Link to="/signin" ><button className="signIn btn">SIGN IN</button></Link> : <Link to="/signin" ><button className="signIn btn">SIGN OUT</button></Link>}
         </div>
         
     );

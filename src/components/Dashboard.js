@@ -17,8 +17,6 @@ import Friends from "./Friends"
 
 import Profile from "./Profile"
 
-
-
 const Dashboard = () => {
 
     let {url} = useRouteMatch();

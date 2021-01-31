@@ -2,9 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  Redirect
+  Route
 } from "react-router-dom";
 import './App.css';
 import Splash from './components/Splash';
@@ -19,9 +17,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Splash}/>
-          <Route exact path="/signin" component={Signin}/>
-          <Route exact path="/signup" component={Signup}/>
-          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route path="/signin" component={Signin}/>
+          <Route path="/signup" component={Signup}/>
+          <Route path="/dashboard" component={Dashboard}/>
         </Switch>
       </Router>
     </div>
