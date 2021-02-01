@@ -31,10 +31,6 @@ const movies = [
 
 const Movielist = () => {
 
-    const handleSubmit = () => {
-
-    }
-
     const handleClick = () => {
 
     }
