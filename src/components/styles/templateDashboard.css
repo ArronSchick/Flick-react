@@ -1,31 +1,70 @@
-.flickContainer {
+.dtContainer {
     display: flex;
     justify-content: center;
     margin: 20px 0px 0px 20px;
 
 }
 
-.flickMain {
+.dtMain {
 display: flex;
+align-items: center;
+width: 100%;
 flex-direction: column;
 height: 100%;
 }
 
-.flickTitle {
+.dtTitle {
+    width: 50vw;
     font-size: 40px;
 }
 
-.movieCard {
+.dtCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: linear-gradient(rgb(36, 36, 36), rgb(58, 58, 58));
     border: 2px solid rgba(68, 166, 223, 0.2);
     height: 80vh;
     width: 50vw;
     border-radius: 5px;
 }
+
+.dtSearch {
+    margin: 50px 0px 20px 0px;
+    padding-left: 30px;
+    width: 100%;    
+}
+
+.dtListContainer {
+    
+    display: flex;
+    width: 100%;
+    margin: 0px 30px 0px 30px;
+}
+
+.dtList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    flex-grow: 1;
+    padding-right: 40px;
+}
+
+.dtListItem {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: rgba(163, 197, 211, 0.966);
+    border-bottom: dotted 1px rgba(68, 166, 223, 0.4);
+}
+
+/* --------FLICK VIEW --------------------------------- */
+
 .movie {
     height: 60vh;
     text-align: center;
     background-color: rgb(34, 34, 34);
+    width: 100%;
 }
 .swipeButtons {
     width: 100%;
@@ -78,3 +117,16 @@ height: 100%;
     border:solid 1px rgb(255, 146, 138);
     box-shadow: 2px 2px 10px rgb(255, 68, 43);
 }
+
+/* --------MOVIE VIEW --------------------------------- */
+
+/* --------FRIENDS VIEW --------------------------------- */
+.friendsSearchField {
+    min-width: 300px;
+    max-width: 500px;
+    height: 30px;
+    font-size: 18px;
+    outline: none;
+}
+
+/* --------PROFILE VIEW --------------------------------- */
