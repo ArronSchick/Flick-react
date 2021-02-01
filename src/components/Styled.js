@@ -24,8 +24,9 @@ export const Span = styled.span `
 `
 
 export const Button = styled(Span) `
-	border: ${"1px solid " + toHexColourString(COLOUR1)};
+	border: ${"1px solid "};
 	cursor: pointer;
+	color: white;
 `
 
 export const Input = styled.input `

@@ -45,8 +45,6 @@ const Splash = () => {
                     <h1 className="splashTitle">FLICK</h1>
                     <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
                     <button className="splashRandom btn">RANDOM MOVIE</button>
-                    <h1>{movies}</h1>
-                    <button className="splashRandom btn" onClick={handleClick}>RANDOM MOVIE</button>
                 </div>
             </div>
         </div>
