@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1ddc42112c5de2153ec0378a8d9e2105e3814cbf
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {Panel,Label, Input, Button} from './Styled'
@@ -69,5 +73,9 @@ export default function NewUser() {
 //         </div>
 //     );
 // }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1ddc42112c5de2153ec0378a8d9e2105e3814cbf
 
 // export default SignUp
