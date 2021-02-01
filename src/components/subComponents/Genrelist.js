@@ -1,5 +1,5 @@
 import React from "react";
-import './Genrelist.css'
+import '../styles/Genrelist.css'
 import Dropdown from './Dropdown'
 
 const Genrelist = () => {

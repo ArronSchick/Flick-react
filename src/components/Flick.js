@@ -1,5 +1,5 @@
 import React from "react";
-import './Flick.css'
+import './styles/templateDashboard.css';
 
 const Flick = () => {
 
@@ -8,10 +8,10 @@ const Flick = () => {
     }
 
     return (
-        <div className="flickContainer">
-            <div className="flickMain">
-                <h1 className="flickTitle">FLICK</h1>
-                <div className="movieCard">
+        <div className="dtContainer">
+            <div className="dtMain">
+                <h1 className="dtTitle">FLICK</h1>
+                <div className="dtCard">
                     <div className="movie">
                         
                     </div>

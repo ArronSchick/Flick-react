@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './Dropdown.css';
+import '../styles/Dropdown.css';
 import onClickOutside from "react-onclickoutside";
 
 

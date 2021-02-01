@@ -1,6 +1,6 @@
 import React from "react";
-import './Profile.css'
-import Navbar from './Navbar'
+import './styles/templateDashboard.css';
+import Navbar from './subComponents/Navbar'
 
 let profileName = "USERS NAME"
 
@@ -11,10 +11,10 @@ const handleSubmit = () => {
 }
 
     return (
-        <div className="profileContainer">
-            <div className="profileMain">
-                <h1 className="profileTitle">{profileName}</h1>
-                <div className="profileCard">
+        <div className="dtContainer">
+            <div className="dtMain">
+                <h1 className="dtTitle">{profileName}</h1>
+                <div className="dtCard">
                     <div className="forms">
                         <h1>Your Profile</h1>
                         <form className="signForm">
