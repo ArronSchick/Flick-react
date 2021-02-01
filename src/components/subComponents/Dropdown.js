@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import './Dropdown.css';
-// import onClickOutside from "react-onclickoutside";
+import '../styles/Dropdown.css';
+import onClickOutside from "react-onclickoutside";
 
 
 function Dropdown({title, items = [], multiSelect = false}) {
@@ -8,7 +8,7 @@ function Dropdown({title, items = [], multiSelect = false}) {
     const [selection, setSelection] = useState([]);
     const toggle = () => setOpen(!open);
 
-    // Dropdown.handleClickOutside = () => setOpen(false);
+    Dropdown.handleClickOutside = () => setOpen(false);
 
     const handleOnClick = (item) => {
         if (!selection.some(current => current.id === item.id)) {
@@ -65,11 +65,11 @@ function Dropdown({title, items = [], multiSelect = false}) {
     );
 }
 
-// const clickOutsideConfig = {
-//     handleClickOutside: () => Dropdown.handleClickOutside
-//   };
+const clickOutsideConfig = {
+    handleClickOutside: () => Dropdown.handleClickOutside
+  };
   
-// export default onClickOutside(Dropdown, clickOutsideConfig);
+export default onClickOutside(Dropdown, clickOutsideConfig);
 
-export default Dropdown
+// export default Dropdown
 

@@ -6,10 +6,10 @@ import {
     Link,
     useRouteMatch
   } from "react-router-dom";
-import './Dashboard.css';
+import './styles/Dashboard.css';
 import Flick from "./Flick"
-import Genrelist from './Genrelist'
-import Slider from './Slider'
+import Genrelist from './subComponents/Genrelist'
+import Slider from './subComponents/Slider'
 
 import Movielist from "./Movielist"
 

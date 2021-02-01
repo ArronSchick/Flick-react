@@ -1,5 +1,5 @@
 import React from "react";
-import './Friends.css'
+import './styles/templateDashboard.css';
 
 const friends = [
     {
@@ -40,18 +40,18 @@ const Friends = () => {
     }
 
     return (
-        <div className="friendsContainer">
-            <div className="friendsMain">
-                <h1 className="friendsTitle">FRIENDS</h1>
-                <div className="friendsCard">
-                    <div className="friendsSearch">
+        <div className="dtContainer">
+            <div className="dtMain">
+                <h1 className="dtTitle">FRIENDS</h1>
+                <div className="dtCard">
+                    <div className="dtSearch">
                         <input className="friendsSearchField placeColor" placeholder="friends email address" autoFocus/>
                         <input className="btn friendsSearchBtn" type="submit"  onSubmit={handleSubmit} value="Add Friend"/>
                     </div>
-                    <div className="friendsListContainer">
-                        <ul className="friendsList">
+                    <div className="dtListContainer">
+                        <ul className="dtList">
                             {friends.map(friend => (
-                                <li className="friendsListItem" key={friend.id}>
+                                <li className="dtListItem" key={friend.id}>
                                     <span>{friend.profileName}</span>
                                     <span>{friend.email}</span>
                                     <button className="removeFriend btn" type="button" onClick={handleClick}>REMOVE</button>

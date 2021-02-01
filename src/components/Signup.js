@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {Panel,Label, Input, Button} from './Styled'
@@ -69,5 +70,6 @@ export default function NewUser() {
 //         </div>
 //     );
 // }
+
 
 // export default SignUp
