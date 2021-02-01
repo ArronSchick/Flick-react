@@ -8,7 +8,6 @@ import Navbar from "./Navbar";
 import React,{useState, useReducer, useEffect} from 'react'
 import {getMovies} from '../services/apitest'
 
-<<<<<<< HEAD
 // const initialState = {
 //     jokes: [],
 //     loggedInUser: null,
@@ -21,14 +20,12 @@ import {getMovies} from '../services/apitest'
 //     .then((jokes) => dispatch({type: 'setJokes', data: jokes}))
 //     .catch((error) => console.log(error))
 // },[])
-=======
 fetch(``)
 
 const handleClick = () => {
 
 }
 
->>>>>>> 95c3fe833528dc439b9cd8addc2ef945c0a5613f
 const Splash = () => {
     const initialState = {
         movies: []
@@ -48,12 +45,9 @@ const Splash = () => {
                 <div className="splashBody">
                     <h1 className="splashTitle">FLICK</h1>
                     <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
-<<<<<<< HEAD
                     <button className="splashRandom btn">RANDOM MOVIE</button>
                     <h1>{movies}</h1>
-=======
                     <button className="splashRandom btn" onClick={handleClick}>RANDOM MOVIE</button>
->>>>>>> 95c3fe833528dc439b9cd8addc2ef945c0a5613f
                 </div>
             </div>
         </div>
