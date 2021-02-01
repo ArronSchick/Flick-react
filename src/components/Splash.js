@@ -2,16 +2,10 @@
 import {
   Link
 } from "react-router-dom";
-<<<<<<< HEAD
 import './styles/Splash.css';
 import Navbar from "./subComponents/Navbar";
 import React,{useState, useReducer, useEffect} from 'react'
 import {getMovies} from '../services/apitest'
-=======
-
-import './styles/Splash.css';
-import Navbar from "./subComponents/Navbar";
->>>>>>> 1ddc42112c5de2153ec0378a8d9e2105e3814cbf
 
 // const initialState = {
 //     jokes: [],

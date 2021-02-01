@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 1ddc42112c5de2153ec0378a8d9e2105e3814cbf
 import React,{useState} from 'react'
 import {Button, Label, Input} from './Styled'
 import {signIn} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
-<<<<<<< HEAD
-=======
-
->>>>>>> 1ddc42112c5de2153ec0378a8d9e2105e3814cbf
 
 export default function SignIn({history}) {
 	const initialFormState = {
