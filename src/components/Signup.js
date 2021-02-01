@@ -1,9 +1,7 @@
 import React from "react";
 import {
-    BrowserRouter as Router,
-    Link,
+    Link
   } from "react-router-dom";
-import Navbar from "./Navbar";
 import './Forms.css';
 
 const SignUp = () => {
@@ -23,7 +21,7 @@ const handleSubmit = () => {
                         <input className="passwords placeColor" placeholder="password" name="password" id="password"/>
                         <input className="passwords placeColor" placeholder="password" name="confirmpassword" id="confirmpassword"/>
                     </div>
-                    <input className="btn" type="submit" onSubmit={handleSubmit} value="sign up"/>
+                    <input className="btn" type="submit" onSubmit={handleSubmit} value="create"/>
                 </form>
                 <br></br>
                 <Link to="/"><button className="back btn">BACK</button></Link>

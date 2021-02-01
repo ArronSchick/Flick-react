@@ -1,7 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Link,
+  Link
 } from "react-router-dom";
 import './Splash.css';
 import Navbar from "./Navbar";
