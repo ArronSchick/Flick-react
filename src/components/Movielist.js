@@ -1,5 +1,5 @@
 import React from "react";
-import './Movielist.css'
+import './styles/templateDashboard.css';
 
 const movies = [
     {
@@ -31,23 +31,19 @@ const movies = [
 
 const Movielist = () => {
 
-    const handleSubmit = () => {
-
-    }
-
     const handleClick = () => {
 
     }
 
     return (
-        <div className="moviesContainer">
-            <div className="moviesMain">
-                <h1 className="moviesTitle">MOVIES</h1>
-                <div className="moviesCard">
-                    <div className="moviesListContainer">
-                        <ul className="moviesList">
+        <div className="dtContainer">
+            <div className="dtMain">
+                <h1 className="dtTitle">MOVIES</h1>
+                <div className="dtCard">
+                    <div className="dtListContainer">
+                        <ul className="dtList">
                             {movies.map(movie => (
-                                <li className="moviesListItem" key={movie.id}>
+                                <li className="dtListItem" key={movie.id}>
                                     <span>{movie.title}</span>
                                     <span>{movie.runTime}</span>
                                     <button className="removeMovie btn" type="button" onClick={handleClick}>REMOVE</button>

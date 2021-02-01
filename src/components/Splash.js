@@ -1,10 +1,9 @@
 
 import {
-  BrowserRouter as Router,
-  Link,
+  Link
 } from "react-router-dom";
-import './Splash.css';
-import Navbar from "./Navbar";
+import './styles/Splash.css';
+import Navbar from "./subComponents/Navbar";
 import React,{useState, useReducer, useEffect} from 'react'
 import {getMovies} from '../services/apitest'
 
