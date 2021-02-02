@@ -21,7 +21,7 @@ function App() {
 		auth: {token: null}
 	}
 	const [store, dispatch] = useReducer(stateReducer,initialState)
-	const [randomMovies, setRandomMovie] = useState(null)
+	const [randomMovies, setRandomMovie] = useState(initialState)
 	useEffect(() => {
 		getMovies()
 		.then((movies) => dispatch({type: 'setRandomMovie', data: movies}))
