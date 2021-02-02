@@ -26,13 +26,51 @@ import stateReducer from '../utils/stateReducer.js';
 //     .then((jokes) => dispatch({type: 'setJokes', data: jokes}))
 //     .catch((error) => console.log(error))
 // },[])
-fetch(``)
-
-const handleClick = () => {
-
-}
+// fetch(``)
 
 const Splash = () => {
+
+    // -----------------Random movie button Splash Page------------------------
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max-min) + min);
+    }
+
+    let pageNumber = randomNumber(1, 500)
+    let arrayItem = randomNumber(1,20)
+
+    const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${process.env.REACT_APP_API_KEY}&page=${pageNumber}&include_adult=false`
+
+    const GENRE_LIST = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`
+    
+    const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
+
+    const randMovieData = {
+        title: "",
+        overview: "",
+        poster_path: "",
+        vote_average: ""
+    }
+
+    const [randMovie, setRandMovie] = useState(randMovieData)
+
+    async function getMovies(url) {
+        const res = await fetch(url)
+        const data = await res.json()
+        const randomSelected = data.results[arrayItem]
+        setRandMovie({
+            title: randomSelected.title,
+            overview: randomSelected.overview,
+            poster_path: randomSelected.poster_path,
+            vote_average: randomSelected.vote_average
+        })
+    }
+
+    const handleClick = () => {
+        getMovies(API_URL)
+    }
+
+// ------------------Movie list ----------------------------------
+
     const initialState = {
 		movies: [],
 		loggedInUser: sessionStorage.getItem("user") || null,
@@ -57,10 +95,26 @@ const Splash = () => {
                 <div className="splashBody">
                     <h1 className="splashTitle">FLICK</h1>
                     <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
-                    <button className="splashRandom btn">RANDOM MOVIE</button>
-                    <h1>{loggedInUser}</h1>
+                    <button className="splashRandom btn" onClick={handleClick}>RANDOM MOVIE</button>
+                </div>
+                <div className="randomMovie">
+                       <img className="poster" src={IMG_PATH + randMovie.poster_path} alt={randMovie.title}/>
+                        <div className="infoContainer">
+                            <div className="movieInfo">
+                                <h3 className="randomMovieTitle">{randMovie.title}</h3>
+                                <span className="rating">{randMovie.vote_average}</span>
+                            </div>
+                            <div className="overView">
+                                {randMovie.overview}
+                            </div>
+                        </div>
+                        
                 </div>
             </div>
+            <div className="attributionContainer">
+                    <img className="tmdbLogo" src={process.env.PUBLIC_URL + "/tmdb_logo.svg"} ></img>
+                    <p className="attribution">This product uses the TMDb API but is not endorsed or certified by TMDb</p>
+                </div>
         </div>
     );
 }

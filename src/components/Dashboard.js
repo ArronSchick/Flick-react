@@ -10,7 +10,6 @@ import {
 import './styles/Dashboard.css';
 import Flick from "./Flick"
 import Genrelist from './subComponents/Genrelist'
-import Slider from './subComponents/Slider'
 import Movielist from "./Movielist"
 import Friends from "./Friends"
 import Profile from "./Profile"
@@ -48,7 +47,6 @@ const Dashboard = () => {
                 <Link to={`${url}/movielist`} className="links movielink">Movie list</Link>
                 <Link to={`${url}/friends`} className="links friendlink">Friends</Link>
                 <Link to={`${url}/profile`}  className="links profilelink">Profile</Link>
-                <Route path={`${url}/flick`} component={Slider}/>
                 <Route path={`${url}/flick`} component={Genrelist}/>
                 <h1>{loggedInUser}</h1>
                 {loggedInUser ?
