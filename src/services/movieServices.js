@@ -5,3 +5,8 @@ export async function getMovies() {
     console.log(response)
     return response.data
 }
+
+export async function getMovie(id) {
+    const response = await railsAPI.get(`/api/watchlists/${id}`)
+    return response.data
+}

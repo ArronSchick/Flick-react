@@ -11,6 +11,6 @@ export async function signIn(data) {
 	}
 
 export async function signOut(data) {
-	// sign in on server
-	return data.username
+	sessionStorage.clear()
+	return "Logged out";
 }
