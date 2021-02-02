@@ -1,7 +1,6 @@
 .splashContainer {
     display: flex;
     width: 99vw;
-    height:100%;
     align-items: center;
     flex-direction: column;
   }
@@ -23,34 +22,4 @@
   .splashBody .splashRandom {
     width: 150px;
     margin: 20px 0px 0px 0px;
-  }
-
-  .randomMovie {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .poster {
-    width: 25vw;
-    border: solid 2px  rgba(104, 177, 245, 0.4);
-    border-radius: 2px;
-    box-shadow: 2px 2px 15px rgba(24, 24, 24, 1);
-  }
-  .randomMovieTitle {
-    font-size: 25px;
-  }
-
-  .rating {
-    color: rgb(182, 208, 223);
-  }
-
-  .movieInfo {
-    width: 25vw;
-  }
-
-  .overView {
-    margin-top: 2vh;
-    width: 25vw;
   }
