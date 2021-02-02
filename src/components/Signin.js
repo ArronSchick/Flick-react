@@ -1,9 +1,8 @@
-
 import React,{useState} from 'react'
-import {Button, Label, Input} from './Styled'
+import {Button, Input} from './Styled'
 import {signIn} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
-
+import './styles/Forms.css'
 
 export default function SignIn({history}) {
 	const initialFormState = {
@@ -23,6 +22,8 @@ export default function SignIn({history}) {
 		signIn(formState)
 		.then(({username,jwt}) => {
 			console.log(username, jwt);
+			sessionStorage.setItem("token", jwt);
+			sessionStorage.setItem("user", username);
 			dispatch({type: 'setLoggedInUser', data: username})
 			dispatch({type: 'setToken', data: jwt})
 			history.push('/dashboard')
@@ -31,47 +32,17 @@ export default function SignIn({history}) {
 
 	}
 	return (
-		<form >
-			<Label>Email:</Label>
-			<Input type='email' name='email' value={formState.username} onChange={handleChange}></Input>
-			<Label>Password:</Label>
-			<Input type='password' name='password' value={formState.password} onChange={handleChange}></Input>
-			<Button onClick={handleSubmit}>Login</Button>
-		</form>
+		<div className="formContainer signin">
+             <div className="forms">
+                 <h1>Sign In</h1>
+                 <form className="signForm">
+                     <div className="fields"> 
+						<Input placeholder="email" className = "email placeColor" id="email" type='email' name='email' value={formState.username} onChange={handleChange}></Input>
+						<Input type='password' className="passwords placeColor" placeholder="password" name="password" id="password" value={formState.password} onChange={handleChange}></Input>
+						<Button className="btn" value="sign in" type="submit" onClick={handleSubmit}>Log in</Button>
+					</div>
+				</form>
+			</div>
+		</div>
 	)
 }
-
-
-
-// import React from "react";
-// import {
-//     BrowserRouter as Router,
-//     Link,
-//   } from "react-router-dom";
-// import Navbar from "./Navbar";
-// import './Forms.css';
-
-// const handleSubmit = () => {
-
-// }
-
-// const SignIn = () => {
-//     return (
-//         <div className="formContainer signin">
-//             <div className="forms">
-//                 <h1>Sign In</h1>
-//                 <form className="signForm">
-//                     <div className="fields"> 
-//                         <input className="email placeColor" autoFocus placeholder="email@..." name="email" id="email"></input>
-//                         <input className="passwords placeColor" placeholder="password" name="password" id="password"></input>
-//                     </div>
-//                     <input className="btn" type="submit" onSubmit={handleSubmit} value="sign in"/>
-//                 </form>
-//                 <br></br>
-//                 <Link to="/"><button className="back btn">BACK</button></Link>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default SignIn

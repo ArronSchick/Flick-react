@@ -11,14 +11,14 @@ import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import {StateContext} from './utils/stateContext';
 import stateReducer from './utils/stateReducer.js';
-import {getMovies} from './services/apitest'
+import {getMovies} from './services/movieServices';
 
 function App() {
 
   const initialState = {
 		movies: [],
-		loggedInUser: null,
-		auth: {token: null}
+		loggedInUser: sessionStorage.getItem("user") || null,
+		auth: {token:sessionStorage.getItem("token") || null}
 	}
 	const [store, dispatch] = useReducer(stateReducer,initialState)
 	const [randomMovies, setRandomMovie] = useState(null)
