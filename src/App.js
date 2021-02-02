@@ -21,12 +21,13 @@ function App() {
 		auth: {token:sessionStorage.getItem("token") || null}
 	}
 	const [store, dispatch] = useReducer(stateReducer,initialState)
-	const [randomMovies, setRandomMovie] = useState(null)
+  const [randomMovies, setRandomMovies] = useState(null)
+  const {loggedInUser} = store 
 	useEffect(() => {
-		getMovies()
-		.then((movies) => dispatch({type: 'setRandomMovie', data: movies}))
-		.catch((error) => console.log(error))
-  },[])
+		getMovies(loggedInUser)
+		.then((movies) => dispatch({type: 'setMovies', data: movies}))
+    .catch((error) => console.log(error))
+  },[loggedInUser])
   
   return (
     <div className="main">

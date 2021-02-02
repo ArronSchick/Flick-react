@@ -29,7 +29,7 @@ const Dashboard = () => {
     let history = useHistory()
     let {url} = useRouteMatch();
     const [store, dispatch] = useReducer(stateReducer,initialState)
-	const {loggedInUser} = store
+    const {loggedInUser} = store
 
     function handleSignOut(event) {
         event.preventDefault()
@@ -37,7 +37,7 @@ const Dashboard = () => {
         .then(() => {
             dispatch({type: 'setLoggedInUser', data: null})
             dispatch({type: 'setToken', data: null})
-            history.push('/signin')
+            history.push('')
         })
     }
     return (

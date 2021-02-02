@@ -41,15 +41,16 @@ const Splash = () => {
     
     let {url} = useRouteMatch();
     const [store, dispatch] = useReducer(stateReducer,initialState)
-	const {loggedInUser} = store
+    const {loggedInUser} = store
+    const {movie} = store
 
     // const [store, dispatch] = useReducer(stateReducer,initialState)
     const [movies, setMovies] = useState(null)
     useEffect(() => {
         getMovies()
-        // .then((movies) => dispatch({type: 'setMovies', data: movies}))
+        .then((movies) => dispatch({type: "setMovies", data: movies}))
         .catch((error)=> console.log(error))
-    })
+    }, [])
     return (
         <div>
             <Navbar />
@@ -58,7 +59,7 @@ const Splash = () => {
                     <h1 className="splashTitle">FLICK</h1>
                     <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
                     <button className="splashRandom btn">RANDOM MOVIE</button>
-                    <h1>{loggedInUser}</h1>
+                    <h2>{movie}</h2>
                 </div>
             </div>
         </div>

@@ -1,8 +1,7 @@
 import railsAPI from '../config/api';
 
-export async function getMovies() {
-    const response = await railsAPI.get('/api/watchlists')
-    console.log(response)
+export async function getMovies(username) {
+    const response = await railsAPI.get(`/api/watchlists/${username}`)
     return response.data
 }
 
