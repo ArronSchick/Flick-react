@@ -11,6 +11,8 @@ export default function Movielist() {
     console.log(auth.token)
     if(!movies) return null
 
+    
+
     return (
         <div className="dtContainer">
             <div className="dtMain">

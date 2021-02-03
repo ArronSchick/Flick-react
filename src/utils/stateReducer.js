@@ -22,6 +22,13 @@ export default function reducer (state, action) {
 				}
 			}
 		}
+
+		case 'addFriends': {
+			return {
+				...state,
+				friends: action.data
+			}
+		}
 		default: return state
 	}
 }
