@@ -1,6 +1,6 @@
 export default function reducer (state, action) {
 	switch(action.type) {
-		case 'setRandomMovie':{
+		case 'setMovies':{
 			return {
 				...state,
 				movies: action.data

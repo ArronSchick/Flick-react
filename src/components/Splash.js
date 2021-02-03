@@ -79,15 +79,16 @@ const Splash = () => {
     
     let {url} = useRouteMatch();
     const [store, dispatch] = useReducer(stateReducer,initialState)
-	const {loggedInUser} = store
+    const {loggedInUser} = store
+    const {movie} = store
 
     // const [store, dispatch] = useReducer(stateReducer,initialState)
     const [movies, setMovies] = useState(null)
     useEffect(() => {
         getMovies()
-        // .then((movies) => dispatch({type: 'setMovies', data: movies}))
+        .then((movies) => dispatch({type: "setMovies", data: movies}))
         .catch((error)=> console.log(error))
-    })
+    }, [])
     return (
         <div>
             <Navbar />
@@ -95,20 +96,6 @@ const Splash = () => {
                 <div className="splashBody">
                     <h1 className="splashTitle">FLICK</h1>
                     <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
-                    <button className="splashRandom btn" onClick={handleClick}>RANDOM MOVIE</button>
-                </div>
-                <div className="randomMovie">
-                       <img className="poster" src={IMG_PATH + randMovie.poster_path} alt={randMovie.title}/>
-                        <div className="infoContainer">
-                            <div className="movieInfo">
-                                <h3 className="randomMovieTitle">{randMovie.title}</h3>
-                                <span className="rating">{randMovie.vote_average}</span>
-                            </div>
-                            <div className="overView">
-                                {randMovie.overview}
-                            </div>
-                        </div>
-                        
                 </div>
             </div>
             <div className="attributionContainer">

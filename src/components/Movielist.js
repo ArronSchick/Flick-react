@@ -1,39 +1,15 @@
 import React from "react";
 import './styles/templateDashboard.css';
+import {useGlobalState} from '../utils/stateContext'
 
-const movies = [
-    {
-        id: 1,
-        title: "A Movie",
-        runTime: "120 min"
-    },
-    {
-        id: 2,
-        title: "A Movie",
-        runTime: "120 min"
-    },
-    {
-        id: 3,
-        title: "A Movie",
-        runTime: "120 min"
-    },
-    {
-        id: 4,
-        title: "A Movie",
-        runTime: "120 min"
-    },
-    {
-        id: 5,
-        title: "A Movie",
-        runTime: "120 min"
-    }
-]
+export default function Movielist() {
 
-const Movielist = () => {
-
-    const handleClick = () => {
-
-    }
+    const {store} = useGlobalState()
+    const {movies} = store
+    const {auth} = store
+    console.log(movies)
+    console.log(auth.token)
+    if(!movies) return null
 
     return (
         <div className="dtContainer">
@@ -45,8 +21,7 @@ const Movielist = () => {
                             {movies.map(movie => (
                                 <li className="dtListItem" key={movie.id}>
                                     <span>{movie.title}</span>
-                                    <span>{movie.runTime}</span>
-                                    <button className="removeMovie btn" type="button" onClick={handleClick}>REMOVE</button>
+                                    {/* <button className="removeMovie btn" type="button" onClick={handleClick}>REMOVE</button> */}
                                 </li>
                             ))}
                         </ul>
@@ -56,5 +31,3 @@ const Movielist = () => {
         </div>
     );
 }
-
-export default Movielist 
