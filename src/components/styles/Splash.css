@@ -23,3 +23,56 @@
     width: 150px;
     margin: 20px 0px 0px 0px;
   }
+
+  .randomMovie {
+    margin: 3vh 0vh 3vh 0vh;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .poster {
+    width: 15vw;
+    min-height: 43.5vh;
+    border: solid 2px  rgba(104, 177, 245, 0.4);
+    border-radius: 2px;
+    box-shadow: 2px 2px 15px rgba(24, 24, 24, 1);
+    background-color: rgb(29, 29, 29);
+  }
+
+  .infoContainer {
+    padding-left: 3vw;
+  }
+
+  .randomMovieTitle {
+    font-size: 25px;
+  }
+
+  .rating {
+    color: rgb(182, 208, 223);
+  }
+
+  .movieInfo {
+    width: 25vw;
+  }
+
+  .overView {
+    margin-top: 2vh;
+    width: 25vw;
+  }
+
+  .attributionContainer {
+    display: flex;
+    padding: 1vw;
+    border-top: solid 1px rgba(104, 177, 245, 0.4);
+  }
+
+  .attribution {
+    font-size: 12px;
+    padding-left: 2vw;
+  }
+
+  .tmdbLogo {
+    width: 5vw;
+  }
