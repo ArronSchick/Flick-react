@@ -29,6 +29,12 @@ export default function reducer (state, action) {
 				friends: action.data
 			}
 		}
+		case 'setFriendsList': {
+			return {
+				...state,
+				friendsList: action.data
+			}
+		}
 		default: return state
 	}
 }

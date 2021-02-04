@@ -21,7 +21,6 @@ function App() {
 		auth: {token:sessionStorage.getItem("token") || null}
 	}
 	const [store, dispatch] = useReducer(stateReducer,initialState)
-  const [randomMovies, setRandomMovies] = useState(null)
   const {loggedInUser} = store 
   
 	useEffect(() => {

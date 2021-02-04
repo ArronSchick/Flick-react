@@ -14,18 +14,6 @@ export default function Friends (){
     const {store} = useGlobalState()
     const {auth} = store
 
-    // useEffect(() => {
-    //     if(auth) {
-    //       addFriends(data)
-    //       .then((friend) => {
-    //           console.log(friend)
-    //           setFormState({
-    //               email: data
-    //           })
-    //       })  
-    //     }
-    // })
-
     function handleSubmit(event) {
         event.preventDefault()
         addFriends(formState)
@@ -33,11 +21,6 @@ export default function Friends (){
             console.log(email);
         })
         .catch((error) => console.log(error))
-    }
-
-
-    function handleClick() {
-
     }
 
     function handleChange(event) {

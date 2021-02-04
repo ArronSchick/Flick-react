@@ -7,7 +7,6 @@ export default function Movielist() {
     const {store} = useGlobalState()
     const {movies} = store
     if(!movies) return null
-
     
 
     return (
