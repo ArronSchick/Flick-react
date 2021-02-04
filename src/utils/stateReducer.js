@@ -24,10 +24,10 @@ export default function reducer(state, action) {
     case "setProfile": {
       return {
         ...state,
-        username: action.data,
-        email: action.data,
+        profile: action.data,
       };
     }
+
     default:
       return state;
   }

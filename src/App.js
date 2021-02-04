@@ -10,21 +10,30 @@ import { StateContext } from "./utils/stateContext";
 import stateReducer from "./utils/stateReducer.js";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 import { getMovies } from "./services/movieServices";
+import { profile } from "./services/authServices";
 
 function App() {
   const initialState = {
     movies: [],
     loggedInUser: sessionStorage.getItem("user") || null,
     auth: { token: sessionStorage.getItem("token") || null },
+    profile: [],
   };
   const [store, dispatch] = useReducer(stateReducer, initialState);
   const [randomMovies, setRandomMovies] = useState(null);
   const { loggedInUser } = store;
+
   useEffect(() => {
     getMovies(loggedInUser)
       .then((movies) => dispatch({ type: "setMovies", data: movies }))
       .catch((error) => console.log(error));
   }, [loggedInUser]);
+
+  useEffect(() => {
+    profile()
+      .then((profile) => dispatch({ type: "setProfile", data: profile }))
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div className="main">

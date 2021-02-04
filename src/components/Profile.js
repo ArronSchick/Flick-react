@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./styles/templateDashboard.css";
 import Navbar from "./subComponents/Navbar";
@@ -16,7 +16,9 @@ const Profile = () => {
   };
 
   const [formState, setFormState] = useState(initialFormState);
-  const { dispatch } = useGlobalState();
+  const { store, dispatch } = useGlobalState();
+  const { profile } = store;
+
   let history = useHistory();
   function handleChange(event) {
     setFormState({
@@ -47,6 +49,7 @@ const Profile = () => {
                   type="text"
                   className="profilename placeColor"
                   autoFocus
+                  placeholder={profile.username}
                   name="username"
                   id="profilename"
                   value={formState.username}
@@ -55,6 +58,7 @@ const Profile = () => {
                 <input
                   type="email"
                   className="email placeColor"
+                  placeholder={profile.email}
                   name="email"
                   id="email"
                   value={formState.email}

@@ -11,7 +11,8 @@ export async function signIn(data) {
 }
 
 export async function profile(data) {
-  const response = await railsAPI.post("/api/auth/profile", data);
+  const response = await railsAPI.get("/api/auth/profile", data);
+  console.log(response);
   return response.data;
 }
 
