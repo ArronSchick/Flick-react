@@ -23,6 +23,7 @@ function App() {
 	const [store, dispatch] = useReducer(stateReducer,initialState)
   const [randomMovies, setRandomMovies] = useState(null)
   const {loggedInUser} = store 
+  
 	useEffect(() => {
 		getMovies(loggedInUser)
 		.then((movies) => dispatch({type: 'setMovies', data: movies}))

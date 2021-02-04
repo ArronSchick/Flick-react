@@ -7,6 +7,7 @@ export async function addFriends(data) {
     return response.data
 }
 
-// export async function showFriends(username) {
-//     const response = await railsAPI.get(`/api/friendships/${username}`)
-// }
+export async function showFriends(id) {
+    const response = await railsAPI.get(`/api/friendships/${id}`)
+    return response.data
+}

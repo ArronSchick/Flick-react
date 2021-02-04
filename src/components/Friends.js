@@ -3,34 +3,7 @@ import {useGlobalState} from '../utils/stateContext'
 import {addFriends} from '../services/friendServices'
 import './styles/templateDashboard.css';
 import {Button, Label, Input} from './Styled'
-
-const friends = [
-    {
-        id: 1,
-        profileName: "Bob",
-        email: "bob@gmail.com"
-    },
-    {
-        id: 2,
-        profileName: "Bob",
-        email: "bob@gmail.com"
-    },
-    {
-        id: 3,
-        profileName: "Bob",
-        email: "bob@gmail.com"
-    },
-    {
-        id: 4,
-        profileName: "Bob",
-        email: "bob@gmail.com"
-    },
-    {
-        id: 5,
-        profileName: "Bob",
-        email: "bob@gmail.com"
-    }
-]
+import ShowFriends from './ShowFriends'
 
 export default function Friends (){
     const initialFormState = {
@@ -85,15 +58,7 @@ export default function Friends (){
                         <Button onClick={handleSubmit} value="Add Friend">Add Friend</Button>
                     </div>
                     <div className="dtListContainer">
-                        <ul className="dtList">
-                            {friends.map(friend => (
-                                <li className="dtListItem" key={friend.id}>
-                                    <span>{friend.profileName}</span>
-                                    <span>{friend.email}</span>
-                                    <button className="removeFriend btn" type="button" onClick={handleClick}>REMOVE</button>
-                                </li>
-                            ))}
-                        </ul>
+                        <ShowFriends />
                     </div>
                 </div>
             </div>
