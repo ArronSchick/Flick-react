@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     margin: 20px 0px 0px 20px;
-
 }
 
 .dtMain {
@@ -24,7 +23,7 @@ height: 100%;
     align-items: center;
     background: linear-gradient(rgb(36, 36, 36), rgb(58, 58, 58));
     border: 2px solid rgba(68, 166, 223, 0.2);
-    height: 80vh;
+    height: 100%;
     width: 50vw;
     border-radius: 5px;
 }
@@ -61,7 +60,7 @@ height: 100%;
 /* --------FLICK VIEW --------------------------------- */
 
 .movie {
-    height: 60vh;
+    height: 100%;
     text-align: center;
     background-color: rgb(34, 34, 34);
     width: 100%;
@@ -69,7 +68,8 @@ height: 100%;
 .swipeButtons {
     width: 100%;
     display: flex;
-    padding-top: 15px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     justify-content: space-around;
 }
 
@@ -121,7 +121,7 @@ height: 100%;
 
 .posterFlick {
     padding-top: 2vh;
-    width: 35vw;
+    width: 20vw;
 }
 
 /* --------MOVIE VIEW --------------------------------- */

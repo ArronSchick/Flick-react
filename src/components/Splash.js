@@ -14,20 +14,6 @@ import {getMovies} from '../services/movieServices'
 import railsAPI from '../config/api'
 import stateReducer from '../utils/stateReducer.js';
 
-// const initialState = {
-//     jokes: [],
-//     loggedInUser: null,
-//     auth: {token: null}
-// }
-// const [store, dispatch] = useReducer(stateReducer,initialState)
-// const [randomJoke, setRandomJoke] = useState(null)
-// useEffect(() => {
-//     getJokes()
-//     .then((jokes) => dispatch({type: 'setJokes', data: jokes}))
-//     .catch((error) => console.log(error))
-// },[])
-// fetch(``)
-
 const Splash = () => {
 
     // -----------------Random movie button Splash Page------------------------
