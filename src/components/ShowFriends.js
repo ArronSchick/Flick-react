@@ -1,6 +1,7 @@
 import React,{useState, useEffect, useContext} from "react";
 import {useGlobalState} from '../utils/stateContext'
 import {showFriends} from '../services/friendServices'
+import { Link } from 'react-router-dom';
 import './styles/templateDashboard.css';
 import {Button, Label, Input} from './Styled'
 import Friends from "./Friends"
@@ -12,12 +13,14 @@ const ShowFriend = () => {
 
     useEffect(()=> {
         showFriends(loggedInUser).then(res => setFriends(res))
-        }, [loggedInUser])
+        }, [])
 
 
     return (
         <div>
-            {friends.map(friend => <div>{friend.username}</div>)}
+            <ul>
+                {friends.map(friend => <li><Link to ={`/dashboard/FriendsMovieList/${friend.username}`}>{friend.username}</Link></li>)}
+            </ul>
         </div>
     )
 }
