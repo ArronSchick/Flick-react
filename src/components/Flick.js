@@ -1,19 +1,74 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './styles/templateDashboard.css';
+import axios from 'axios'
+// import { nativeTouchData } from "react-dom/test-utils";
 
-const Flick = () => {
 
-    const handleClick = () => {
+// ----Gets random page number for API call----
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max-min) + min);
+}
 
+let pageNumber = randomNumber(1, 500)
+
+const apiKey = "e4812af5330da7b7e329b9d21a0bf4f1"
+const BASE_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${pageNumber}&include_adult=false`;
+const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
+const imageFlickDefault = process.env.PUBLIC_URL + '/flickDefault.svg'
+const titleFlickDefault = "click to start"
+const noImage = process.env.PUBLIC_URL + '/noImage.svg'
+const year = "&year=2010"
+
+
+export default function Flick() {
+const defaultState = [{poster_path: imageFlickDefault ,original_title:titleFlickDefault}]
+  const [data, setData] = useState(defaultState);
+  const [next, setNext] = useState(0)
+  const [image, setImage] = useState(data[next].poster_path)
+  const [callApi, setCallApi] = useState(false)
+  const [page, setPage] = useState(pageNumber)
+  
+  const api = axios.create({ baseURL: BASE_URL + year});
+  const getUpcoming = api.get();
+
+  useEffect(() => {
+    getUpcoming.then((res) => {
+        setData(res.data.results);
+        console.log(res.data)
+        });
+
+  }, [callApi]);
+
+  const handleClick = (e) => {
+    if (next === 0) {
+        setCallApi(!callApi)
     }
+    setNext(prevState => prevState + 1)
+    imageCall(data)
+    console.log(image)
+    console.log(next)
+    if (next === 19) {
+        setNext(0)
+    }
+}
 
+function imageCall() {
+    if (data[next].poster_path !== null) {
+        setImage(getImage(data[next].poster_path))
+    } else {
+        setImage(noImage)
+    }
+}
     return (
         <div className="dtContainer">
             <div className="dtMain">
                 <h1 className="dtTitle">FLICK</h1>
                 <div className="dtCard">
                     <div className="movie">
-                        
+                            <div className="item">
+                                <img className="posterFlick" src={image} />
+                                <p>{data[next].original_title}</p>
+                            </div>
                     </div>
                    <div className="swipeButtons">
                         <button className="swipeBtn leftSwipe" type="button" onClick={handleClick}>❤︎</button>
@@ -25,5 +80,3 @@ const Flick = () => {
         </div>
     );
 }
-
-export default Flick 
