@@ -10,9 +10,8 @@ export async function signIn(data) {
   return response.data;
 }
 
-export async function profile(data) {
+export async function showUser(data) {
   const response = await railsAPI.get("/api/auth/profile", data);
-  console.log(response);
   return response.data;
 }
 

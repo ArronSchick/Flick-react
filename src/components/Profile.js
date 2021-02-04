@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./styles/templateDashboard.css";
 import Navbar from "./subComponents/Navbar";
-import { update } from "../services/authServices";
 import { useGlobalState } from "../utils/stateContext";
+import { showUser, update } from "../services/authServices";
 
 let profileName = "USERS NAME";
 
@@ -17,7 +17,13 @@ const Profile = () => {
 
   const [formState, setFormState] = useState(initialFormState);
   const { store, dispatch } = useGlobalState();
-  const { profile } = store;
+  const { profile, loggedInUser } = store;
+
+  useEffect(() => {
+    showUser()
+      .then((user) => dispatch({ type: "setProfile", data: user }))
+      .catch((error) => console.log(error));
+  }, [dispatch]);
 
   let history = useHistory();
   function handleChange(event) {
@@ -31,10 +37,16 @@ const Profile = () => {
     update(formState)
       .then((user) => {
         dispatch({ type: "setLoggedInUser", data: user.username });
+        dispatch({ type: "setProfile", data: user });
         history.push("/dashboard/profile");
       })
       .catch((error) => console.log(error));
+    setFormState(initialFormState);
   }
+
+  useEffect(() => {
+    console.log(loggedInUser);
+  });
 
   return (
     <div className="dtContainer">
@@ -67,7 +79,7 @@ const Profile = () => {
                 <input
                   type="password"
                   className="passwords placeColor"
-                  placeholder="new password"
+                  placeholder="New password"
                   name="password"
                   id="password"
                   value={formState.password}
@@ -76,7 +88,7 @@ const Profile = () => {
                 <input
                   type="password"
                   className="passwords placeColor"
-                  placeholder="confirm new password"
+                  placeholder="Confirm new password"
                   name="password_confirmation"
                   id="confirmpassword"
                   value={formState.password_confirmation}

@@ -10,7 +10,6 @@ import { StateContext } from "./utils/stateContext";
 import stateReducer from "./utils/stateReducer.js";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 import { getMovies } from "./services/movieServices";
-import { profile } from "./services/authServices";
 
 function App() {
   const initialState = {
@@ -28,12 +27,6 @@ function App() {
       .then((movies) => dispatch({ type: "setMovies", data: movies }))
       .catch((error) => console.log(error));
   }, [loggedInUser]);
-
-  useEffect(() => {
-    profile()
-      .then((profile) => dispatch({ type: "setProfile", data: profile }))
-      .catch((error) => console.log(error));
-  }, []);
 
   return (
     <div className="main">
