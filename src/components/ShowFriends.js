@@ -5,19 +5,21 @@ import './styles/templateDashboard.css';
 import {Button, Label, Input} from './Styled'
 import Friends from "./Friends"
 
-export default function ShowFriends() {
+const ShowFriend = () => {
     const {store} = useGlobalState()
-    const {auth} = store
+    const {loggedInUser} = store
+    const [friends, setFriends] = useState([])
 
-    const friendsList = showFriends(auth.token)
+    useEffect(()=> {
+        showFriends(loggedInUser).then(res => setFriends(res))
+        }, [loggedInUser])
+
 
     return (
-        <ul>
-            {friendsList.map((friend) => {
-                return(
-                    <li>{friend.username}</li>
-                )
-            })}
-        </ul>
+        <div>
+            {friends.map(friend => <div>{friend.username}</div>)}
+        </div>
     )
 }
+
+export default ShowFriend

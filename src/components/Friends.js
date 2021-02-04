@@ -31,7 +31,6 @@ export default function Friends (){
         addFriends(formState)
         .then(({email}) => {
             console.log(email);
-            // dispatch({type: 'addFriends', data: email})
         })
         .catch((error) => console.log(error))
     }
