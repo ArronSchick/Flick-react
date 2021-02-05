@@ -3,27 +3,35 @@
 } */
 
 .dashContainer {
-    display: flex;
-    flex-grow: 1;
-    width: 99vw;
+  display: flex;
+  flex-grow: 1;
+  width: 99vw;
 }
 
 .linkContainer {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 0.2;
-    min-width: 250px;
-    max-width: 250px;
-    align-items: center;
-    height: 100vh;
-    width: 200px;
-    padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0.2;
+  min-width: 250px;
+  max-width: 250px;
+  align-items: center;
+  height: 100vh;
+  width: 200px;
+  padding: 0px 10px 0px 10px;
 
-    background: linear-gradient(rgb(48, 48, 48), rgb(90, 90, 90));
-    border: solid, 1px, rgb(54, 54, 54);
-    box-shadow: 2px 2px 15px rgb(24, 24, 24);
+  background: linear-gradient(rgb(48, 48, 48), rgb(90, 90, 90));
+  border: solid, 1px, rgb(54, 54, 54);
+  box-shadow: 2px 2px 15px rgb(24, 24, 24);
 }
 
 .viewsContainer {
-    flex-grow: 5;
+  flex-grow: 5;
+}
+
+.deletebtn {
+  font-size: 18px;
+  color: white;
+  margin: 20px;
+  padding: 5px;
+  background-color: red;
 }

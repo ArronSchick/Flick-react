@@ -14,12 +14,13 @@ import { getMovies } from "./services/movieServices";
 function App() {
   const initialState = {
     movies: [],
-		loggedInUser: sessionStorage.getItem("user") || null,
-		auth: {token:sessionStorage.getItem("token") || null}
-	}
-	const [store, dispatch] = useReducer(stateReducer,initialState)
-  const {loggedInUser} = store 
-  
+    loggedInUser: sessionStorage.getItem("user") || null,
+    auth: { token: sessionStorage.getItem("token") || null },
+    profile: [],
+  };
+  const [store, dispatch] = useReducer(stateReducer, initialState);
+  const { loggedInUser } = store;
+
   return (
     <div className="main">
       <StateContext.Provider value={{ store, dispatch }}>
