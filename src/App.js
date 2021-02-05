@@ -14,18 +14,18 @@ import { getMovies } from "./services/movieServices";
 function App() {
   const initialState = {
     movies: [],
-    loggedInUser: sessionStorage.getItem("user") || null,
-    auth: { token: sessionStorage.getItem("token") || null },
-  };
-  const [store, dispatch] = useReducer(stateReducer, initialState);
-  const [randomMovies, setRandomMovies] = useState(null);
-  const { loggedInUser } = store;
-  useEffect(() => {
-    getMovies(loggedInUser)
-      .then((movies) => dispatch({ type: "setMovies", data: movies }))
-      .catch((error) => console.log(error));
-  }, [loggedInUser]);
-
+		loggedInUser: sessionStorage.getItem("user") || null,
+		auth: {token:sessionStorage.getItem("token") || null}
+	}
+	const [store, dispatch] = useReducer(stateReducer,initialState)
+  const {loggedInUser} = store 
+  
+	useEffect(() => {
+		getMovies(loggedInUser)
+		.then((movies) => dispatch({type: 'setMovies', data: movies}))
+    .catch((error) => console.log(error))
+  },[loggedInUser])
+  
   return (
     <div className="main">
       <StateContext.Provider value={{ store, dispatch }}>

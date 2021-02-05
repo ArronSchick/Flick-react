@@ -13,6 +13,8 @@ import Genrelist from './subComponents/Genrelist'
 import Movielist from "./Movielist"
 import Friends from "./Friends"
 import Profile from "./Profile"
+import FriendsMovieList from "./FriendsMovieList"
+import CommonList from "./CommonList"
 import {StateContext} from '../utils/stateContext';
 import {useGlobalState} from '../utils/stateContext'
 import stateReducer from '../utils/stateReducer.js';
@@ -61,6 +63,8 @@ const Dashboard = () => {
                         <Route path={`${url}/movielist`} component={Movielist}/>
                         <Route path={`${url}/friends`} component={Friends}/>
                         <Route path={`${url}/profile`} component={Profile}/>
+                        <Route path={`${url}/FriendsMovieList`} component={FriendsMovieList}/>
+                        <Route path={`${url}/CommonList`} component={CommonList}/>
                     </Switch>
             </div>
             </Router>

@@ -6,10 +6,8 @@ export default function Movielist() {
 
     const {store} = useGlobalState()
     const {movies} = store
-    const {auth} = store
-    console.log(movies)
-    console.log(auth.token)
     if(!movies) return null
+    
 
     return (
         <div className="dtContainer">

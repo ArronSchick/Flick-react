@@ -3,6 +3,7 @@ import './styles/templateDashboard.css';
 import axios from 'axios';
 import {storeMovies} from '../services/flickServices'
 import {useGlobalState} from '../utils/stateContext'
+
 // import { nativeTouchData } from "react-dom/test-utils";
 
 // ----Gets random page number for API call----
@@ -72,8 +73,6 @@ export default function Flick() {
     }
   };
 
-  
-      
   return (
     <div className="dtContainer">
       <div className="dtMain">

@@ -5,7 +5,6 @@ export default function reducer (state, action) {
 				...state,
 				movies: action.data
 			}
-
 		}
 		case 'setLoggedInUser': {
 			return {
@@ -20,6 +19,18 @@ export default function reducer (state, action) {
 					...state.auth,
 					token: action.data
 				}
+			}
+		}
+		case 'addFriends': {
+			return {
+				...state,
+				friends: action.data
+			}
+		}
+		case 'setFriendsList': {
+			return {
+				...state,
+				friendsList: action.data
 			}
 		}
 		default: return state
