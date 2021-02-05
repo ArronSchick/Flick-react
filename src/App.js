@@ -20,12 +20,6 @@ function App() {
 	const [store, dispatch] = useReducer(stateReducer,initialState)
   const {loggedInUser} = store 
   
-	useEffect(() => {
-		getMovies(loggedInUser)
-		.then((movies) => dispatch({type: 'setMovies', data: movies}))
-    .catch((error) => console.log(error))
-  },[loggedInUser])
-  
   return (
     <div className="main">
       <StateContext.Provider value={{ store, dispatch }}>

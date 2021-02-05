@@ -11,7 +11,7 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-const apiKey = process.env.REACT_APP_API_KEY;
+const apiKey = 'e4812af5330da7b7e329b9d21a0bf4f1'
 const imgPath = 'https://image.tmdb.org/t/p/w300/';
 const noImage = process.env.PUBLIC_URL + '/noImage.svg';
 const titleFlickDefault = 'click to start';

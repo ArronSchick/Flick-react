@@ -1,13 +1,19 @@
-import React from "react";
+import React,{useEffect} from "react";
 import './styles/templateDashboard.css';
 import {useGlobalState} from '../utils/stateContext'
+import {getMovies} from '../services/movieServices'
 
 export default function Movielist() {
 
-    const {store} = useGlobalState()
+    const {store, dispatch} = useGlobalState()
     const {movies} = store
-    if(!movies) return null
+    const {loggedInUser} = store
     
+    useEffect(() => {
+		getMovies(loggedInUser)
+		.then((movies) => dispatch({type: 'setMovies', data: movies}))
+    .catch((error) => console.log(error))
+  },[])
 
     return (
         <div className="dtContainer">
