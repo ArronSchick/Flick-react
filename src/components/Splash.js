@@ -81,7 +81,7 @@ const Splash = () => {
             <div className="splashContainer">
                 <div className="splashBody">
                     <h1 className="splashTitle">FLICK</h1>
-                    <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
+                    <Link to="/signup"><button  className="signUp btn" name="signup">SIGN UP</button></Link>
                 </div>
             </div>
             <div className="attributionContainer">
