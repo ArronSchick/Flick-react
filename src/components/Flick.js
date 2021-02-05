@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './styles/templateDashboard.css';
 import axios from 'axios';
+import {storeMovies} from '../services/flickServices'
+import {useGlobalState} from '../utils/stateContext'
+
 // import { nativeTouchData } from "react-dom/test-utils";
 
 // ----Gets random page number for API call----
@@ -12,16 +15,25 @@ const apiKey = process.env.REACT_APP_API_KEY;
 const imgPath = 'https://image.tmdb.org/t/p/w300/';
 const noImage = process.env.PUBLIC_URL + '/noImage.svg';
 const titleFlickDefault = 'click to start';
-const year = '&year=2010';
 
 export default function Flick() {
   const defaultState = [
     { poster_path: noImage, original_title: titleFlickDefault },
   ];
+
+  const { store, dispatch } = useGlobalState();
+  const { loggedInUser } = store;
+  const addMovieToWatchlist = {
+    title: null,
+    movie_id: null,
+    user_id: loggedInUser
+  }
+
+  const [watchlist, setWatchlist] = useState(addMovieToWatchlist)
   const [data, setData] = useState(defaultState);
   const [next, setNext] = useState(0);
   const [callApi, setCallApi] = useState(false);
-  const yearParam = '&year=';
+  // const yearParam = '&year=';
 
   useEffect(() => {
     (async function fetchData() {
@@ -32,32 +44,34 @@ export default function Flick() {
         )}&include_adult=false`
       );
       setData(response.data.results);
-      console.log(response.data.results);
+      setWatchlist({
+        title: (response.data.results[0].original_title),
+        movie_id: (response.data.results[0].id),
+        user_id: loggedInUser
+        })
     })();
   }, [callApi]);
 
+  useEffect(() => {
+    setWatchlist({
+      title: (data[next].original_title),
+      movie_id: (data[next].id),
+      user_id: loggedInUser
+      })
+      console.log(watchlist)
+  }, [next])
+
   const handleClick = (e) => {
     setNext((prevState) => prevState + 1);
+
     if (e.target.name === "like") {
-      // fetchData()
+      storeMovies(watchlist)
     }
     if (next === 5) {
       setCallApi(!callApi);
       setNext(0);
     }
   };
-
-  async function postMovies() {
-    const postMovies = await axios({
-      method: 'post',
-      url: '/api/watchlists',
-      data: {
-        title: (data[next].original_title),
-        id: (data[next].id),
-
-      }
-    });
-  }
 
   return (
     <div className="dtContainer">

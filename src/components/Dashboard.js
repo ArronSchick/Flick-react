@@ -20,6 +20,7 @@ import {useGlobalState} from '../utils/stateContext'
 import stateReducer from '../utils/stateReducer.js';
 import { signOut } from "../services/authServices";
 import {Button, Input} from './Styled'
+import {getFlickMovies} from "./Flick"
 
 const Dashboard = () => {
     const initialState = {
@@ -41,6 +42,7 @@ const Dashboard = () => {
             history.push('')
         })
     }
+
     return (
         <div className="dashContainer">
             <Router>
