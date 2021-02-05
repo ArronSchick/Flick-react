@@ -19,14 +19,7 @@ function App() {
     profile: [],
   };
   const [store, dispatch] = useReducer(stateReducer, initialState);
-  const [randomMovies, setRandomMovies] = useState(null);
   const { loggedInUser } = store;
-
-  useEffect(() => {
-    getMovies(loggedInUser)
-      .then((movies) => dispatch({ type: "setMovies", data: movies }))
-      .catch((error) => console.log(error));
-  }, [loggedInUser]);
 
   return (
     <div className="main">

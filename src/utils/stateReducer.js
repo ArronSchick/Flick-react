@@ -27,7 +27,18 @@ export default function reducer(state, action) {
         profile: action.data,
       };
     }
-
+    case "addFriends": {
+      return {
+        ...state,
+        friends: action.data,
+      };
+    }
+    case "setFriendsList": {
+      return {
+        ...state,
+        friendsList: action.data,
+      };
+    }
     default:
       return state;
   }

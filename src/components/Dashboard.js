@@ -13,9 +13,14 @@ import Genrelist from "./subComponents/Genrelist";
 import Movielist from "./Movielist";
 import Friends from "./Friends";
 import Profile from "./Profile";
+import FriendsMovieList from "./FriendsMovieList";
+import CommonList from "./CommonList";
+import { StateContext } from "../utils/stateContext";
 import { useGlobalState } from "../utils/stateContext";
+import stateReducer from "../utils/stateReducer.js";
 import { signOut } from "../services/authServices";
 import { Button, Input } from "./Styled";
+import { getFlickMovies } from "./Flick";
 
 const Dashboard = () => {
   let history = useHistory();
