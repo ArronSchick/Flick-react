@@ -16,7 +16,7 @@ import {getMovies} from './services/movieServices';
 function App() {
 
   const initialState = {
-		movies: [],
+    movies: [],
 		loggedInUser: sessionStorage.getItem("user") || null,
 		auth: {token:sessionStorage.getItem("token") || null}
 	}

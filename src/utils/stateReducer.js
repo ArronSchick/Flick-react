@@ -5,7 +5,6 @@ export default function reducer (state, action) {
 				...state,
 				movies: action.data
 			}
-
 		}
 		case 'setLoggedInUser': {
 			return {
@@ -22,7 +21,6 @@ export default function reducer (state, action) {
 				}
 			}
 		}
-
 		case 'addFriends': {
 			return {
 				...state,

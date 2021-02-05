@@ -15,6 +15,7 @@ import {
     useRouteMatch,
     useHistory
   } from "react-router-dom";
+import CommonList from "./CommonList"
 
 export default function FriendsMovieList() {
     const initialState = {
@@ -33,7 +34,7 @@ export default function FriendsMovieList() {
 
     return (
         <div>
-            <FriendContext.Provider value={{friend,dispatch}}>
+            <FriendContext.Provider value={{friend}}>
             <div>
                 <h1>{friendName}'s Movie List</h1>
                 <ul className="dtList">
@@ -45,7 +46,11 @@ export default function FriendsMovieList() {
                 </ul>
             </div>
             <div>
-            <Link to={"/dashboard/CommonList"}  className="links profilelink">See Common Titles!</Link>
+            <Link to={{
+                pathname: "/dashboard/CommonList",
+                friendProps:{
+                    name: {friendsList}}
+                }}  className="links profilelink">See Common Titles!</Link>
             </div>
             </FriendContext.Provider>  
         </div>
