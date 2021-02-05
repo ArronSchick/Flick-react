@@ -20,6 +20,11 @@ export async function update(data) {
   return response.data;
 }
 
+export async function deleteAccount(data) {
+  const response = await railsAPI.delete("/api/auth/delete", data);
+  return response.data;
+}
+
 export async function signOut(data) {
   sessionStorage.clear();
   return "Logged out";

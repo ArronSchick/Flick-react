@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./styles/templateDashboard.css";
-import Navbar from "./subComponents/Navbar";
 import { useGlobalState } from "../utils/stateContext";
-import { showUser, update } from "../services/authServices";
+import { showUser, update, deleteAccount } from "../services/authServices";
 
 let profileName = "USERS NAME";
 
@@ -17,7 +16,7 @@ const Profile = () => {
 
   const [formState, setFormState] = useState(initialFormState);
   const { store, dispatch } = useGlobalState();
-  const { profile, loggedInUser } = store;
+  const { profile } = store;
 
   useEffect(() => {
     showUser()
@@ -38,15 +37,23 @@ const Profile = () => {
       .then((user) => {
         dispatch({ type: "setLoggedInUser", data: user.username });
         dispatch({ type: "setProfile", data: user });
+        sessionStorage.setItem("user", user.username);
         history.push("/dashboard/profile");
       })
       .catch((error) => console.log(error));
     setFormState(initialFormState);
   }
-
-  useEffect(() => {
-    console.log(loggedInUser);
-  });
+  function handleDelete(event) {
+    event.preventDefault();
+    deleteAccount()
+      .then(() => {
+        sessionStorage.clear();
+        dispatch({ type: "setLoggedInUser", data: null });
+        dispatch({ type: "setToken", data: null });
+        history.push("");
+      })
+      .catch((error) => console.log(error));
+  }
 
   return (
     <div className="dtContainer">
@@ -102,7 +109,9 @@ const Profile = () => {
                 value="Save changes"
               />
             </form>
-            <Navbar />
+            <button className="deletebtn" onClick={handleDelete}>
+              DELETE ACCOUNT
+            </button>
           </div>
         </div>
       </div>
