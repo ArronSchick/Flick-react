@@ -65,6 +65,11 @@ const Dashboard = () => {
             <Route path={`${url}/movielist`} component={Movielist} />
             <Route path={`${url}/friends`} component={Friends} />
             <Route path={`${url}/profile`} component={Profile} />
+            <Route
+              path={`${url}/FriendsMovieList`}
+              component={FriendsMovieList}
+            />
+            <Route path={`${url}/CommonList`} component={CommonList} />
           </Switch>
         </div>
       </Router>
