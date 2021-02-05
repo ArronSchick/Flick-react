@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const railsAPI = axios.create({
-  baseURL: "https://dashboard.heroku.com/",
+  baseURL: "https://filmflicks.herokuapp.com",
 });
 
 railsAPI.interceptors.request.use((req) => {
