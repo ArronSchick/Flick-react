@@ -7,16 +7,15 @@ import { showUser, update, deleteAccount } from "../services/authServices";
 let profileName = "USERS NAME";
 
 const Profile = () => {
+  const { store, dispatch } = useGlobalState();
+  const { profile } = store;
   const initialFormState = {
-    username: "",
-    email: "",
+    username: profile.username,
+    email: profile.email,
     password: "",
     password_confirmation: "",
   };
-
   const [formState, setFormState] = useState(initialFormState);
-  const { store, dispatch } = useGlobalState();
-  const { profile } = store;
   const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
