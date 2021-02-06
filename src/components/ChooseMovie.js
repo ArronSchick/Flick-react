@@ -1,11 +1,11 @@
 import { Button, Input } from "./Styled";
-import React,{useState, useEffect, useContext, createContext, useReducer} from "react";
+import React from "react";
 import { useGlobalState } from "../utils/stateContext";
 import { Link } from "react-router-dom";
 
 export default function ChooseMovie(props) {
-    const { store, dispatch } = useGlobalState();
-    const { movies, friendsList, loggedInUser, commonTitles} = store;
+    const { store} = useGlobalState();
+    const {commonTitles} = store;
     const randomMovie = commonTitles[Math.floor(Math.random() * commonTitles.length)]
         
     return(

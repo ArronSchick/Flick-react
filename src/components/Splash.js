@@ -1,18 +1,13 @@
 
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
-    useRouteMatch,
-    useHistory
+    
   } from "react-router-dom";
 import './styles/Splash.css';
 import Navbar from "./subComponents/Navbar";
-import React,{useState, useReducer, useEffect} from 'react'
-import {getMovies} from '../services/movieServices'
-import railsAPI from '../config/api'
-import stateReducer from '../utils/stateReducer.js';
+import React,{useState} from 'react'
+
 
 const Splash = () => {
 

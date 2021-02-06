@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export default function CommonList() {
   const { store, dispatch } = useGlobalState();
   const { movies, friendsList, loggedInUser, commonTitles} = store;
-  // const friendMovieList = props.location.friendProps.name.friendsList;
   useEffect(() => {
     getMovies(loggedInUser)
       .then((movies) => {dispatch({ type: "setMovies", data: movies })
@@ -23,8 +22,6 @@ export default function CommonList() {
   }, [dispatch, loggedInUser]);
 
 
-  // dispatch({type: "setCommonTitles", data: cT })
-
   return (
     <div>
       <h1>Common List</h1>
@@ -38,9 +35,6 @@ export default function CommonList() {
       <Link
           to={{
             pathname: "/dashboard/ChooseMovie",
-            // commonProps: {
-            //   name: { uniqueCommonTitles },
-            // },
           }}
           className="links profilelink"
         >

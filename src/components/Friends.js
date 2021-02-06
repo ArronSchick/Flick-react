@@ -1,8 +1,7 @@
-import React,{useState, useEffect, useContext} from "react";
-import {useGlobalState} from '../utils/stateContext'
+import React,{useState} from "react";
 import {addFriends} from '../services/friendServices'
 import './styles/templateDashboard.css';
-import {Button, Label, Input} from './Styled'
+import {Button, Input} from './Styled'
 import ShowFriends from './ShowFriends'
 import {useHistory} from 'react-router-dom'
 
