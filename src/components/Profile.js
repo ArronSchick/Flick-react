@@ -17,6 +17,7 @@ const Profile = () => {
   const [formState, setFormState] = useState(initialFormState);
   const { store, dispatch } = useGlobalState();
   const { profile } = store;
+  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     showUser()
@@ -39,8 +40,9 @@ const Profile = () => {
         dispatch({ type: "setProfile", data: user });
         sessionStorage.setItem("user", user.username);
         history.push("/dashboard/profile");
+        setSubmitted(true)
       })
-      .catch((error) => console.log(error));
+      .catch((error) => window.alert(error));
     setFormState(initialFormState);
   }
   function handleDelete(event) {
@@ -53,7 +55,7 @@ const Profile = () => {
         dispatch({ type: "setToken", data: null });
         history.push("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => window.alert(error));
     } else {
       return null 
     }
@@ -116,6 +118,11 @@ const Profile = () => {
             <button className="deletebtn" onClick={handleDelete}>
               DELETE ACCOUNT
             </button>
+            <div>
+            {submitted ? 
+							<h1>Success! Your profile has been updated!</h1>
+							 : null}
+            </div>
           </div>
         </div>
       </div>
