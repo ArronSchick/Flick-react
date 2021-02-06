@@ -14,6 +14,7 @@ const ShowFriend = () => {
     useEffect(()=> {
         showFriends(loggedInUser)
         .then((friends) => dispatch({type: 'setFriends', data:friends}))
+        .catch((error) => console.log(error));
         }, [])
 
     function handleDelete(username) {
@@ -22,17 +23,21 @@ const ShowFriend = () => {
             dispatch({type: 'deleteFriend', data: username})
         })
     }
+    console.log(friends)
     return (
         <div className='dtListContainer'>
             <ul className="dtList">
                 {friends.map(friend => 
-                <li className="dtListItem">
+                <li className="dtListItem" key={friend.id}>
                 <h1>{friend.username}</h1>
                 <Link to ={`/dashboard/FriendsMovieList/${friend.username}`}>See their List!
                 </Link>
                 <Button onClick = {() => handleDelete(friend.username)}>Delete</Button>
                 </li>)}
             </ul>
+            <div>
+
+            </div>
         </div>
     )
 }

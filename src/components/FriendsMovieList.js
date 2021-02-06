@@ -3,6 +3,7 @@ import { getMovies } from "../services/movieServices";
 import { useGlobalState } from "../utils/stateContext";
 import { Link } from "react-router-dom";
 
+
 export default function FriendsMovieList() {
   const friendName = window.location.pathname.split("/").pop();
   const { store, dispatch } = useGlobalState();

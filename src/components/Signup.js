@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import { Input, Button} from './Styled'
-import {signUp} from '../services/authServices'
+import {showUser, signUp} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
 import { Link } from "react-router-dom";
 
@@ -31,6 +31,9 @@ export default function NewUser() {
 			sessionStorage.setItem("user", data.username);
 			dispatch({type: 'setLoggedInUser', data: data.username})
 			setSubmitted(true)
+			showUser()
+			.then((user) => dispatch({ type: "setProfile", data: user }))
+      		.catch((error) => console.log(error));
 			// history.push('/dashboard/flick')
 		})
 	}

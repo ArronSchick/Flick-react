@@ -14,6 +14,7 @@ const Profile = () => {
     email: profile.email,
     password: "",
     password_confirmation: "",
+    errorMessage: '',
   };
   const [formState, setFormState] = useState(initialFormState);
   const [submitted, setSubmitted] = useState(false)
@@ -41,7 +42,8 @@ const Profile = () => {
         history.push("/dashboard/profile");
         setSubmitted(true)
       })
-      .catch((error) => window.alert(error));
+      .catch((error) => setFormState({
+        errorMessage: "Profile update failed, please check if email is valid and passwords match"}))
     setFormState(initialFormState);
   }
   function handleDelete(event) {
@@ -121,6 +123,9 @@ const Profile = () => {
             {submitted ? 
 							<h1>Success! Your profile has been updated!</h1>
 							 : null}
+            </div>
+            <div>
+              {formState.errorMessage && <h2>{formState.errorMessage}</h2>}
             </div>
           </div>
         </div>

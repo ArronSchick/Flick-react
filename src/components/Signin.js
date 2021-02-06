@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {Button, Input} from './Styled'
-import {signIn} from '../services/authServices'
+import {showUser, signIn} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
 import './styles/Forms.css'
 
@@ -27,6 +27,9 @@ export default function SignIn({history}) {
 			sessionStorage.setItem("user", username);
 			dispatch({type: 'setLoggedInUser', data: username})
 			dispatch({type: 'setToken', data: jwt})
+			showUser()
+			.then((user) => dispatch({ type: "setProfile", data: user }))
+      		.catch((error) => console.log(error));
 			history.push('/dashboard')
 		})
 		.catch((error) => setFormState({

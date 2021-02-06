@@ -58,7 +58,6 @@ export default function Flick() {
       movie_id: (data[next].id),
       user_id: loggedInUser
       })
-      console.log(watchlist)
   }, [next])
 
   const handleClick = (e) => {
