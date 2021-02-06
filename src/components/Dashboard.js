@@ -57,8 +57,8 @@ const Dashboard = () => {
           <Route path={`${url}/flick`} component={Genrelist} />
           <h1>{loggedInUser}</h1>
           {loggedInUser ? (
-            <Button onClick={handleSignOut}>Sign Out</Button>
-          ) : null}
+            <Button onClick={handleSignOut}>Sign Out</Button>)
+          : null}
         </div>
         <div className="viewsContainer">
           <Switch>

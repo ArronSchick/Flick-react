@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom'
 import { Input, Button} from './Styled'
 import {signUp} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
+import { Link } from "react-router-dom";
 
 export default function NewUser() {
 	const initialFormState = {
@@ -11,8 +12,10 @@ export default function NewUser() {
 		password: '', 
 		password_confirmation: ''
 	}
+	
+	const [submitted, setSubmitted] = useState(false)
 	const [formState, setFormState] = useState(initialFormState)
-	const {dispatch} = useGlobalState()
+	const {store, dispatch} = useGlobalState()
 	let history = useHistory()
 	function handleChange(event) {
 		setFormState({
@@ -26,8 +29,9 @@ export default function NewUser() {
 		.then((data) => {
 			sessionStorage.setItem("token", data.jwt);
 			sessionStorage.setItem("user", data.username);
-			dispatch({type: 'setLoggedInUser', data: data.email})
-			history.push('/dashboard')
+			dispatch({type: 'setLoggedInUser', data: data.username})
+			setSubmitted(true)
+			// history.push('/dashboard/flick')
 		})
 	}
 	return (
@@ -41,6 +45,12 @@ export default function NewUser() {
 						<Input placeholder="password" type='password' name='password' value={formState.password} onChange={handleChange}></Input>
 						<Input placeholder="confirm password" type='password' name='password_confirmation' value={formState.password_confirmation} onChange={handleChange}></Input>
 						<Button className="btn" onClick={handleRegister}>Register</Button>
+							{submitted ? 
+							<div>
+							<h1>Success! Thank you for registering!</h1>
+							<Link to={"/dashboard/flick"} className="links profilelink">Click Here to Start Using Flick!</Link>
+							</div>
+							 : null}
 					</div>
 				</form>
 			</div>
