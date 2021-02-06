@@ -51,16 +51,22 @@ export default function reducer(state, action) {
         randomMovie: action.data,
       };
     }
+    case "setFriends": {
+      return {
+        ...state,
+        friends: action.data,
+      };
+    }
     case "deleteMovie": {
       return {
         ...state,
-        deleteMovie: action.data,
-      };
+        movies: state.movies.filter((movie) => movie.id !== action.data)
+      }
     }
     case "deleteFriend": {
       return {
         ...state,
-        deleteFriend: action.data,
+        friends: state.friends.filter((friend) => friend.username !== action.data)
       };
     }
 

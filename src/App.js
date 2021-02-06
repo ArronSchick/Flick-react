@@ -19,10 +19,10 @@ function App() {
     profile: [],
     friendsList: [],
     commonTitles: [],
-    randomMovie: []
+    randomMovie: [],
+    friends: [],
   };
   const [store, dispatch] = useReducer(stateReducer, initialState);
-  const { loggedInUser } = store;
 
   return (
     <div className="main">

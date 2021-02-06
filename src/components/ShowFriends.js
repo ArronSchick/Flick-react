@@ -8,20 +8,18 @@ import {Button} from './Styled'
 import {useHistory} from 'react-router-dom'
 
 const ShowFriend = () => {
-    const {store} = useGlobalState()
+    const { store, dispatch } = useGlobalState();
+    const {friends} = store
     const {loggedInUser} = store
-    const [friends, setFriends] = useState([])
-
-    const history = useHistory()
     useEffect(()=> {
-        showFriends(loggedInUser).then(res => setFriends(res))
+        showFriends(loggedInUser)
+        .then((friends) => dispatch({type: 'setFriends', data:friends}))
         }, [])
 
     function handleDelete(username) {
         deleteFriend(username)
         .then(() => {
-            history.push('/dashboard')
-            history.push('/dashboard/friends')
+            dispatch({type: 'deleteFriend', data: username})
         })
     }
     return (
@@ -29,7 +27,8 @@ const ShowFriend = () => {
             <ul className="dtList">
                 {friends.map(friend => 
                 <li className="dtListItem">
-                <Link to ={`/dashboard/FriendsMovieList/${friend.username}`}>{friend.username}
+                <h1>{friend.username}</h1>
+                <Link to ={`/dashboard/FriendsMovieList/${friend.username}`}>See their List!
                 </Link>
                 <Button onClick = {() => handleDelete(friend.username)}>Delete</Button>
                 </li>)}

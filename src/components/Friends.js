@@ -12,10 +12,9 @@ export default function Friends (){
     }
 
     const [formState, setFormState] = useState(initialFormState)
-    const {store} = useGlobalState()
-    const {auth} = store
 
     const history = useHistory()
+    
     function handleSubmit(event) {
         event.preventDefault()
         addFriends(formState)
@@ -34,7 +33,6 @@ export default function Friends (){
             [event.target.name]: event.target.value
         })
     }
-
     return (
         <div className="dtContainer">
             <div className="dtMain">

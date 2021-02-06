@@ -17,14 +17,14 @@ export default function Movielist() {
 		getMovies(loggedInUser)
 		.then((movies) => dispatch({type: 'setMovies', data: movies}))
     .catch((error) => console.log(error))
-  },[])
+    },[])
 
     function handleDelete(id) {
         deleteMovie(id)
         .then(() => {
             dispatch({type: 'deleteMovie', data: id})
-            history.push('/dashboard')
-            history.push('/dashboard/movielist')
+            // history.push('/dashboard')
+            // history.push('/dashboard/movielist')
         })
     }
 
