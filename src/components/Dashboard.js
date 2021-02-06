@@ -21,6 +21,7 @@ import stateReducer from "../utils/stateReducer.js";
 import { signOut } from "../services/authServices";
 import { Button, Input } from "./Styled";
 import { getFlickMovies } from "./Flick";
+import ChooseMovie from "./ChooseMovie"
 
 const Dashboard = () => {
   let history = useHistory();
@@ -65,11 +66,9 @@ const Dashboard = () => {
             <Route path={`${url}/movielist`} component={Movielist} />
             <Route path={`${url}/friends`} component={Friends} />
             <Route path={`${url}/profile`} component={Profile} />
-            <Route
-              path={`${url}/FriendsMovieList`}
-              component={FriendsMovieList}
-            />
+            <Route path={`${url}/FriendsMovieList`} component={FriendsMovieList}/>
             <Route path={`${url}/CommonList`} component={CommonList} />
+            <Route path={`${url}/ChooseMovie`} component={ChooseMovie} />
           </Switch>
         </div>
       </Router>

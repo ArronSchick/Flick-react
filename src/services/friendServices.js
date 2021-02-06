@@ -11,3 +11,8 @@ export async function showFriends() {
     const response = await railsAPI.get(`/api/friendships/`)
     return response.data
 }
+
+export async function deleteFriend(username) {
+    const response = await railsAPI.delete(`/api/friendships/${username}`)
+    return response.data
+}

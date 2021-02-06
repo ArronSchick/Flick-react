@@ -39,6 +39,31 @@ export default function reducer(state, action) {
         friendsList: action.data,
       };
     }
+    case "setCommonTitles": {
+      return {
+        ...state,
+        commonTitles: action.data,
+      };
+    }
+    case "setRandomMovie": {
+      return {
+        ...state,
+        randomMovie: action.data,
+      };
+    }
+    case "deleteMovie": {
+      return {
+        ...state,
+        deleteMovie: action.data,
+      };
+    }
+    case "deleteFriend": {
+      return {
+        ...state,
+        deleteFriend: action.data,
+      };
+    }
+
     default:
       return state;
   }

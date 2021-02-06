@@ -1,25 +1,38 @@
-import React,{useState, useEffect, useContext} from "react";
+import React,{useState, useEffect} from "react";
 import {useGlobalState} from '../utils/stateContext'
 import {showFriends} from '../services/friendServices'
+import {deleteFriend} from '../services/friendServices'
 import { Link } from 'react-router-dom';
 import './styles/templateDashboard.css';
-import {Button, Label, Input} from './Styled'
-import Friends from "./Friends"
+import {Button} from './Styled'
+import {useHistory} from 'react-router-dom'
 
 const ShowFriend = () => {
     const {store} = useGlobalState()
     const {loggedInUser} = store
     const [friends, setFriends] = useState([])
 
+    const history = useHistory()
     useEffect(()=> {
         showFriends(loggedInUser).then(res => setFriends(res))
         }, [])
 
-
+    function handleDelete(username) {
+        deleteFriend(username)
+        .then(() => {
+            history.push('/dashboard')
+            history.push('/dashboard/friends')
+        })
+    }
     return (
-        <div>
-            <ul>
-                {friends.map(friend => <li><Link to ={`/dashboard/FriendsMovieList/${friend.username}`}>{friend.username}</Link></li>)}
+        <div className='dtListContainer'>
+            <ul className="dtList">
+                {friends.map(friend => 
+                <li className="dtListItem">
+                <Link to ={`/dashboard/FriendsMovieList/${friend.username}`}>{friend.username}
+                </Link>
+                <Button onClick = {() => handleDelete(friend.username)}>Delete</Button>
+                </li>)}
             </ul>
         </div>
     )

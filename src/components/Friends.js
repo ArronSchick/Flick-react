@@ -4,6 +4,7 @@ import {addFriends} from '../services/friendServices'
 import './styles/templateDashboard.css';
 import {Button, Label, Input} from './Styled'
 import ShowFriends from './ShowFriends'
+import {useHistory} from 'react-router-dom'
 
 export default function Friends (){
     const initialFormState = {
@@ -14,13 +15,17 @@ export default function Friends (){
     const {store} = useGlobalState()
     const {auth} = store
 
+    const history = useHistory()
     function handleSubmit(event) {
         event.preventDefault()
         addFriends(formState)
         .then(({email}) => {
             console.log(email);
+            history.push('/dashboard')
+            history.push('/dashboard/friends')
         })
         .catch((error) => console.log(error))
+
     }
 
     function handleChange(event) {
