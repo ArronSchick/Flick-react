@@ -5,10 +5,11 @@ import {Button, Input} from './Styled'
 import ShowFriends from './ShowFriends'
 import {useHistory} from 'react-router-dom'
 
-export default function Friends (){
-    const initialFormState = {
-        email: ''
-    }
+
+export default function Friends() {
+  const initialFormState = {
+    email: "",
+  };
 
     const [formState, setFormState] = useState(initialFormState)
 
@@ -47,5 +48,7 @@ export default function Friends (){
                 </div>
             </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

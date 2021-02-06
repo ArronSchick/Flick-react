@@ -21,7 +21,6 @@ export default function CommonList() {
       .catch((error) => console.log(error));
   }, [dispatch, loggedInUser]);
 
-
   return (
     <div>
       <h1>Common List</h1>

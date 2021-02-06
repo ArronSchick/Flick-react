@@ -1,4 +1,3 @@
-import React, { useReducer } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,13 +14,12 @@ import Friends from "./Friends";
 import Profile from "./Profile";
 import FriendsMovieList from "./FriendsMovieList";
 import CommonList from "./CommonList";
-import { StateContext } from "../utils/stateContext";
 import { useGlobalState } from "../utils/stateContext";
-import stateReducer from "../utils/stateReducer.js";
 import { signOut } from "../services/authServices";
 import { Button, Input } from "./Styled";
 import { getFlickMovies } from "./Flick";
 import ChooseMovie from "./ChooseMovie"
+
 
 const Dashboard = () => {
   let history = useHistory();

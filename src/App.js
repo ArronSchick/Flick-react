@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useReducer } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Splash from "./components/Splash";
@@ -9,7 +9,6 @@ import Dashboard from "./components/Dashboard";
 import { StateContext } from "./utils/stateContext";
 import stateReducer from "./utils/stateReducer.js";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
-import { getMovies } from "./services/movieServices";
 
 function App() {
   const initialState = {
