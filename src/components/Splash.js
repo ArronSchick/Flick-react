@@ -1,18 +1,13 @@
 
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
-    useRouteMatch,
-    useHistory
+    
   } from "react-router-dom";
 import './styles/Splash.css';
 import Navbar from "./subComponents/Navbar";
-import React,{useState, useReducer, useEffect} from 'react'
-import {getMovies} from '../services/movieServices'
-import railsAPI from '../config/api'
-import stateReducer from '../utils/stateReducer.js';
+import React,{useState} from 'react'
+
 
 const Splash = () => {
 
@@ -57,24 +52,24 @@ const Splash = () => {
 
 // ------------------Movie list ----------------------------------
 
-    const initialState = {
-		movies: [],
-		loggedInUser: sessionStorage.getItem("user") || null,
-		auth: {token:sessionStorage.getItem("token") || null}
-	}
+    // const initialState = {
+	// 	movies: [],
+	// 	loggedInUser: sessionStorage.getItem("user") || null,
+	// 	auth: {token:sessionStorage.getItem("token") || null}
+	// }
     
-    let {url} = useRouteMatch();
-    const [store, dispatch] = useReducer(stateReducer,initialState)
-    const {loggedInUser} = store
-    const {movie} = store
-
+    // let {url} = useRouteMatch();
     // const [store, dispatch] = useReducer(stateReducer,initialState)
-    const [movies, setMovies] = useState(null)
-    useEffect(() => {
-        getMovies()
-        .then((movies) => dispatch({type: "setMovies", data: movies}))
-        .catch((error)=> console.log(error))
-    }, [])
+    // const {loggedInUser} = store
+    // const {movie} = store
+
+    // // const [store, dispatch] = useReducer(stateReducer,initialState)
+    // const [movies, setMovies] = useState(null)
+    // useEffect(() => {
+    //     getMovies()
+    //     .then((movies) => dispatch({type: "setMovies", data: movies}))
+    //     .catch((error)=> console.log(error))
+    // }, [])
     return (
         <div>
             <Navbar />

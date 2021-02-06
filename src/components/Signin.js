@@ -1,13 +1,14 @@
 import React,{useState} from 'react'
 import {Button, Input} from './Styled'
-import {signIn} from '../services/authServices'
+import {showUser, signIn} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
 import './styles/Forms.css'
 
 export default function SignIn({history}) {
 	const initialFormState = {
 		email: '',
-		password: ''
+		password: '',
+		errorMessage: ''
 	}
 	const [formState, setFormState] = useState(initialFormState)
 	const {dispatch} = useGlobalState()
@@ -26,11 +27,16 @@ export default function SignIn({history}) {
 			sessionStorage.setItem("user", username);
 			dispatch({type: 'setLoggedInUser', data: username})
 			dispatch({type: 'setToken', data: jwt})
+			showUser()
+			.then((user) => dispatch({ type: "setProfile", data: user }))
+      		.catch((error) => console.log(error));
 			history.push('/dashboard')
 		})
-		.catch((error) => console.log(error))
+		.catch((error) => setFormState({
+			errorMessage: "Login Failed, please check email and password"}))
+		}
 
-	}
+	
 	return (
 		<div className="formContainer signin">
              <div className="forms">
@@ -40,6 +46,9 @@ export default function SignIn({history}) {
 						<Input placeholder="email" className = "email placeColor" id="email" type='email' name='email' value={formState.username} onChange={handleChange}></Input>
 						<Input type='password' className="passwords placeColor" placeholder="password" name="password" id="password" value={formState.password} onChange={handleChange}></Input>
 						<Button className="btn" value="sign in" type="submit" onClick={handleSubmit}>Log in</Button>
+					</div>
+					<div>
+						{formState.errorMessage && <h2>{formState.errorMessage}</h2>}
 					</div>
 				</form>
 			</div>

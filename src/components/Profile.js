@@ -7,16 +7,17 @@ import { showUser, update, deleteAccount } from "../services/authServices";
 let profileName = "USERS NAME";
 
 const Profile = () => {
-  const initialFormState = {
-    username: "",
-    email: "",
-    password: "",
-    password_confirmation: "",
-  };
-
-  const [formState, setFormState] = useState(initialFormState);
   const { store, dispatch } = useGlobalState();
   const { profile } = store;
+  const initialFormState = {
+    username: profile.username,
+    email: profile.email,
+    password: "",
+    password_confirmation: "",
+    errorMessage: '',
+  };
+  const [formState, setFormState] = useState(initialFormState);
+  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     showUser()
@@ -39,12 +40,15 @@ const Profile = () => {
         dispatch({ type: "setProfile", data: user });
         sessionStorage.setItem("user", user.username);
         history.push("/dashboard/profile");
+        setSubmitted(true)
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setFormState({
+        errorMessage: "Profile update failed, please check if email is valid and passwords match"}))
     setFormState(initialFormState);
   }
   function handleDelete(event) {
     event.preventDefault();
+    if (window.confirm("Are you sure you want to delete your account?")) {
     deleteAccount()
       .then(() => {
         sessionStorage.clear();
@@ -52,7 +56,10 @@ const Profile = () => {
         dispatch({ type: "setToken", data: null });
         history.push("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => window.alert(error));
+    } else {
+      return null 
+    }
   }
 
   return (
@@ -112,6 +119,14 @@ const Profile = () => {
             <button className="deletebtn" onClick={handleDelete}>
               DELETE ACCOUNT
             </button>
+            <div>
+            {submitted ? 
+							<h1>Success! Your profile has been updated!</h1>
+							 : null}
+            </div>
+            <div>
+              {formState.errorMessage && <h2>{formState.errorMessage}</h2>}
+            </div>
           </div>
         </div>
       </div>

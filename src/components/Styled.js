@@ -28,6 +28,11 @@ export const Button = styled(Span) `
 	cursor: pointer;
 	color: white;
 `
+export const Link = styled(Span) `
+	border: ${"1px solid "};
+	cursor: pointer;
+	color: white;
+`
 
 export const Input = styled.input `
 	height: 1em;

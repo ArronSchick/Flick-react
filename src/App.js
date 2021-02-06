@@ -16,6 +16,10 @@ function App() {
     loggedInUser: sessionStorage.getItem("user") || null,
     auth: { token: sessionStorage.getItem("token") || null },
     profile: [],
+    friendsList: [],
+    commonTitles: [],
+    randomMovie: [],
+    friends: [],
   };
   const [store, dispatch] = useReducer(stateReducer, initialState);
 

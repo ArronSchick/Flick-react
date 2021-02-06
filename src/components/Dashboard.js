@@ -16,7 +16,10 @@ import FriendsMovieList from "./FriendsMovieList";
 import CommonList from "./CommonList";
 import { useGlobalState } from "../utils/stateContext";
 import { signOut } from "../services/authServices";
-import { Button } from "./Styled";
+import { Button, Input } from "./Styled";
+import { getFlickMovies } from "./Flick";
+import ChooseMovie from "./ChooseMovie"
+
 
 const Dashboard = () => {
   let history = useHistory();
@@ -52,8 +55,8 @@ const Dashboard = () => {
           <Route path={`${url}/flick`} component={Genrelist} />
           <h1>{loggedInUser}</h1>
           {loggedInUser ? (
-            <Button onClick={handleSignOut}>Sign Out</Button>
-          ) : null}
+            <Button onClick={handleSignOut}>Sign Out</Button>)
+          : null}
         </div>
         <div className="viewsContainer">
           <Switch>
@@ -61,11 +64,9 @@ const Dashboard = () => {
             <Route path={`${url}/movielist`} component={Movielist} />
             <Route path={`${url}/friends`} component={Friends} />
             <Route path={`${url}/profile`} component={Profile} />
-            <Route
-              path={`${url}/FriendsMovieList`}
-              component={FriendsMovieList}
-            />
+            <Route path={`${url}/FriendsMovieList`} component={FriendsMovieList}/>
             <Route path={`${url}/CommonList`} component={CommonList} />
+            <Route path={`${url}/ChooseMovie`} component={ChooseMovie} />
           </Switch>
         </div>
       </Router>
