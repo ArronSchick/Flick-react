@@ -45,6 +45,7 @@ const Profile = () => {
   }
   function handleDelete(event) {
     event.preventDefault();
+    if (window.confirm("Are you sure you want to delete your account?")) {
     deleteAccount()
       .then(() => {
         sessionStorage.clear();
@@ -53,6 +54,9 @@ const Profile = () => {
         history.push("");
       })
       .catch((error) => console.log(error));
+    } else {
+      return null 
+    }
   }
 
   return (
