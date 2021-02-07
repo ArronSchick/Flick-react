@@ -16,7 +16,6 @@ export default function FriendsMovieList() {
       )
       .catch((error) => console.log(error));
   }, [dispatch, friendName]);
-  console.log(friendsList)
   return (
     <div>
       <div>
