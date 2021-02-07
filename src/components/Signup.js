@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import { Input, Button} from './Styled'
 import {showUser, signUp} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
-import { Link } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
 export default function NewUser() {
 	const initialFormState = {
 		username: '', 
@@ -15,6 +14,8 @@ export default function NewUser() {
 	const [submitted, setSubmitted] = useState(false)
 	const [formState, setFormState] = useState(initialFormState)
 	const { dispatch} = useGlobalState()
+	const history = useHistory()
+
 	function handleChange(event) {
 		setFormState({
 			...formState,
@@ -35,6 +36,12 @@ export default function NewUser() {
 			// history.push('/dashboard/flick')
 		})
 	}
+
+	function handleBack(event){
+		event.preventDefault()
+		history.push('/')
+	}
+
 	return (
 		<div className="formContainer signup">
 			<div className="forms">
@@ -52,6 +59,9 @@ export default function NewUser() {
 							<Link to={"/dashboard/flick"} className="links profilelink">Click Here to Start Using Flick!</Link>
 							</div>
 							 : null}
+					</div>
+					<div>
+						<Button className="btn" onClick={handleBack}>Back To Home Page</Button>
 					</div>
 				</form>
 			</div>
