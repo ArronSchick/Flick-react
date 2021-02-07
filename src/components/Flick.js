@@ -21,7 +21,7 @@ export default function Flick() {
     { poster_path: noImage, original_title: titleFlickDefault },
   ];
 
-  const { store, dispatch } = useGlobalState();
+  const { store } = useGlobalState();
   const { loggedInUser } = store;
   const addMovieToWatchlist = {
     title: null,
@@ -50,7 +50,7 @@ export default function Flick() {
         user_id: loggedInUser
         })
     })();
-  }, [callApi]);
+  }, [callApi, loggedInUser]);
 
   useEffect(() => {
     setWatchlist({
@@ -58,7 +58,7 @@ export default function Flick() {
       movie_id: (data[next].id),
       user_id: loggedInUser
       })
-  }, [next])
+  }, [next, data, loggedInUser])
 
   const handleClick = (e) => {
     setNext((prevState) => prevState + 1);

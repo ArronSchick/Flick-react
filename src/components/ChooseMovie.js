@@ -1,4 +1,3 @@
-import { Button, Input } from "./Styled";
 import React from "react";
 import { useGlobalState } from "../utils/stateContext";
 import { Link } from "react-router-dom";
