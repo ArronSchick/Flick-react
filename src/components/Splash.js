@@ -72,11 +72,11 @@ const Splash = () => {
     // }, [])
     return (
         <div>
-            <Navbar />
+            <Navbar data-testid="nav"/>
             <div className="splashContainer">
                 <div className="splashBody">
                     <h1 className="splashTitle">FLICK</h1>
-                    <Link to="/signup"><button  className="signUp btn" >SIGN UP</button></Link>
+                    <Link to="/signup"><button  className="signUp btn" data-testid="signup_button">SIGN UP</button></Link>
                 </div>
             </div>
             <div className="attributionContainer">
