@@ -49,7 +49,7 @@ export default function NewUser() {
 							{submitted ? 
 							<div>
 							<h1>Success! Thank you for registering!</h1>
-							<Link to={"/dashboard/flick"} className="links profilelink">Click Here to Start Using Flick!</Link>
+							<Link to={"/dashboard/flick"} className="links profilelink" data-testid="useFlick">Click Here to Start Using Flick!</Link>
 							</div>
 							 : null}
 					</div>
