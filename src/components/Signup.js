@@ -41,11 +41,11 @@ export default function NewUser() {
 				<h1>Create Account</h1>
 				<form className="signForm">
 					<div className="fields">
-						<Input placeholder="username" type="text" name='username' value={formState.username} onChange={handleChange}></Input>
-						<Input placeholder="email" type='email' name='email' value={formState.email} onChange={handleChange}></Input>
-						<Input placeholder="password" type='password' name='password' value={formState.password} onChange={handleChange}></Input>
-						<Input placeholder="confirm password" type='password' name='password_confirmation' value={formState.password_confirmation} onChange={handleChange}></Input>
-						<Button className="btn" onClick={handleRegister}>Register</Button>
+						<Input placeholder="username" type="text" name='username' value={formState.username} onChange={handleChange} data-testid="username"></Input>
+						<Input placeholder="email" type='email' name='email' value={formState.email} onChange={handleChange} data-testid="email_signup"></Input>
+						<Input placeholder="password" type='password' name='password' value={formState.password} onChange={handleChange} data-testid="password_signup"></Input>
+						<Input placeholder="confirm password" type='password' name='password_confirmation' value={formState.password_confirmation} onChange={handleChange} data-testid="password_confirm"></Input>
+						<Button className="btn" onClick={handleRegister} data-testid="register">Register</Button>
 							{submitted ? 
 							<div>
 							<h1>Success! Thank you for registering!</h1>
