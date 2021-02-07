@@ -9,6 +9,7 @@ import {useHistory} from 'react-router-dom'
 export default function Friends() {
   const initialFormState = {
     email: "",
+    errorMessage: "",
   };
 
     const [formState, setFormState] = useState(initialFormState)
@@ -23,8 +24,9 @@ export default function Friends() {
             history.push('/dashboard')
             history.push('/dashboard/friends')
         })
-        .catch((error) => console.log(error))
-
+        .catch((error) => setFormState({
+            errorMessage: "Cannot find user, please check email is correct and resubmit"}))
+        setFormState(initialFormState);
     }
 
     function handleChange(event) {
@@ -38,6 +40,9 @@ export default function Friends() {
             <div className="dtMain">
                 <h1 className="dtTitle">FRIENDS</h1>
                 <div className="dtCard">
+                    <div>
+                        {formState.errorMessage && <h2>{formState.errorMessage}</h2>}
+                    </div>
                     <div className="dtSearch">
                         <Input placeholder="email" className = "email placeColor" id="email" type='email' name='email' value={formState.email} onChange={handleChange}></Input>
                         <Button onClick={handleSubmit} value="Add Friend">Add Friend</Button>

@@ -30,12 +30,16 @@ export default function SignIn({history}) {
 			showUser()
 			.then((user) => dispatch({ type: "setProfile", data: user }))
       		.catch((error) => console.log(error));
-			history.push('/dashboard')
+			history.push('/dashboard/flick')
 		})
 		.catch((error) => setFormState({
 			errorMessage: "Login Failed, please check email and password"}))
 		}
-
+		
+		function handleBack(event){
+			event.preventDefault()
+			history.push('/')
+		}
 	
 	return (
 		<div className="formContainer signin">
@@ -49,6 +53,9 @@ export default function SignIn({history}) {
 					</div>
 					<div>
 						{formState.errorMessage && <h2>{formState.errorMessage}</h2>}
+					</div>
+					<div>
+						<Button className="btn" onClick={handleBack}>Back To Home Page</Button>
 					</div>
 				</form>
 			</div>
