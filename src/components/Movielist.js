@@ -3,8 +3,7 @@ import './styles/templateDashboard.css';
 import {useGlobalState} from '../utils/stateContext'
 import {getMovies} from '../services/movieServices'
 import {deleteMovie} from '../services/movieServices'
-import { Button, Input } from "./Styled";
-import {useHistory} from 'react-router-dom'
+import { Button} from "./Styled";
 
 export default function Movielist() {
 
@@ -12,12 +11,11 @@ export default function Movielist() {
     const {movies} = store
     const {loggedInUser} = store
     
-    let history = useHistory()
     useEffect(() => {
 		getMovies(loggedInUser)
 		.then((movies) => dispatch({type: 'setMovies', data: movies}))
     .catch((error) => console.log(error))
-    },[])
+    },[dispatch, loggedInUser])
 
     function handleDelete(id) {
         deleteMovie(id)

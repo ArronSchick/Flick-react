@@ -1,11 +1,10 @@
-import React,{useState, useEffect} from "react";
+import React,{ useEffect} from "react";
 import {useGlobalState} from '../utils/stateContext'
 import {showFriends} from '../services/friendServices'
 import {deleteFriend} from '../services/friendServices'
 import { Link } from 'react-router-dom';
 import './styles/templateDashboard.css';
 import {Button} from './Styled'
-import {useHistory} from 'react-router-dom'
 
 const ShowFriend = () => {
     const { store, dispatch } = useGlobalState();
@@ -15,7 +14,7 @@ const ShowFriend = () => {
         showFriends(loggedInUser)
         .then((friends) => dispatch({type: 'setFriends', data:friends}))
         .catch((error) => console.log(error));
-        }, [])
+        }, [dispatch, loggedInUser])
 
     function handleDelete(username) {
         deleteFriend(username)

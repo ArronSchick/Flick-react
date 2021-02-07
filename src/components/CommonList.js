@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function CommonList() {
   const { store, dispatch } = useGlobalState();
-  const { movies, friendsList, loggedInUser, commonTitles} = store;
+  const { friendsList, loggedInUser, commonTitles} = store;
   useEffect(() => {
     getMovies(loggedInUser)
       .then((movies) => {dispatch({ type: "setMovies", data: movies })
@@ -19,7 +19,7 @@ export default function CommonList() {
       dispatch({ type: "setCommonTitles", data: uniqueCommonTitles})
   })
       .catch((error) => console.log(error));
-  }, [dispatch, loggedInUser]);
+  }, [dispatch, loggedInUser, friendsList]);
 
   return (
     <div>

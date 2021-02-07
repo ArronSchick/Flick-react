@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,10 +17,8 @@ import FriendsMovieList from "./FriendsMovieList";
 import CommonList from "./CommonList";
 import { useGlobalState } from "../utils/stateContext";
 import { signOut } from "../services/authServices";
-import { Button, Input } from "./Styled";
-import { getFlickMovies } from "./Flick";
+import { Button} from "./Styled";
 import ChooseMovie from "./ChooseMovie"
-
 
 const Dashboard = () => {
   let history = useHistory();

@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom'
 import { Input, Button} from './Styled'
 import {showUser, signUp} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
@@ -15,8 +14,7 @@ export default function NewUser() {
 	
 	const [submitted, setSubmitted] = useState(false)
 	const [formState, setFormState] = useState(initialFormState)
-	const {store, dispatch} = useGlobalState()
-	let history = useHistory()
+	const { dispatch} = useGlobalState()
 	function handleChange(event) {
 		setFormState({
 			...formState,
