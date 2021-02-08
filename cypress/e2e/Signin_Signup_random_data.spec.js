@@ -9,6 +9,7 @@ describe("Sign up and Sign in forms", () => {
 
     const user = userBuilder()
     it("Should see Sign up Button and navigate to Sign up form then Sing up", () => {
+        
         cy.findByTestId('signup_button').should('be.visible').click()
         cy.url().should("include", "/signup")
         cy.findByTestId('username').type(user.username)
