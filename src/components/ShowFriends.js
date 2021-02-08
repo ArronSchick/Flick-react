@@ -10,10 +10,12 @@ const ShowFriend = () => {
     const { store, dispatch } = useGlobalState();
     const {friends} = store
     const {loggedInUser} = store
+    console.log(loggedInUser)
+    
     useEffect(()=> {
         showFriends(loggedInUser)
         .then((friends) => dispatch({type: 'setFriends', data:friends}))
-        .catch((error) => console.log(error));
+        .catch((error) => dispatch({type: 'setFriends', data:[]}))
         }, [dispatch, loggedInUser])
 
     function handleDelete(username) {

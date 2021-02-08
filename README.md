@@ -170,6 +170,7 @@ Adam wants to be his gatherings to be a blast for everyone and have an easy way 
 
 ![](img/trello_20210124.png)
 
-
-
 ![image-20210124221127529](/Users/robyn/Library/Application Support/typora-user-images/image-20210124221127529.png)
+
+Live production testing video link:
+https://www.youtube.com/watch?v=DXiePsRm3uk&feature=youtu.be&ab_channel=VinsonWang
