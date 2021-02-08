@@ -66,7 +66,7 @@ export default function Flick() {
     if (e.target.name === "like") {
       storeMovies(watchlist)
     }
-    if (next === 5) {
+    if (next === 19) {
       setCallApi(!callApi);
       setNext(0);
     }
@@ -97,6 +97,7 @@ export default function Flick() {
               type="button"
               name="like"
               onClick={handleClick}
+              data-testid="yes"
             >
               ❤︎
             </button>
@@ -105,6 +106,7 @@ export default function Flick() {
               type="button"
               name="dislike"
               onClick={handleClick}
+              data-testid="no"
             >
               ✘
             </button>

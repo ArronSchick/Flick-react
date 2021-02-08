@@ -47,9 +47,9 @@ export default function SignIn({history}) {
                  <h1>Sign In</h1>
                  <form className="signForm">
                      <div className="fields"> 
-						<Input placeholder="email" className = "email placeColor" id="email" type='email' name='email' value={formState.username} onChange={handleChange}></Input>
-						<Input type='password' className="passwords placeColor" placeholder="password" name="password" id="password" value={formState.password} onChange={handleChange}></Input>
-						<Button className="btn" value="sign in" type="submit" onClick={handleSubmit}>Log in</Button>
+						<Input placeholder="email" className = "email placeColor" id="email" type='email' name='email' value={formState.username} onChange={handleChange} data-testid="email_signin"></Input>
+						<Input type='password' className="passwords placeColor" placeholder="password" name="password" id="password" value={formState.password} onChange={handleChange} data-testid="password_signin"></Input>
+						<Button className="btn" value="sign in" type="submit" onClick={handleSubmit} data-testid="login">Log in</Button>
 					</div>
 					<div>
 						{formState.errorMessage && <h2>{formState.errorMessage}</h2>}
