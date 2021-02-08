@@ -1,13 +1,12 @@
-
+import React from 'react';
 import {Link} from "react-router-dom";
 import './styles/Splash.css';
 import Navbar from "./subComponents/Navbar";
-import React from 'react'
 
 
 const Splash = () => {
 
-    // // -----------------Random movie button Splash Page------------------------
+    // -----------------Random movie button Splash Page------------------------
     // function randomNumber(min, max) {
     //     return Math.floor(Math.random() * (max-min) + min);
     // }
@@ -73,6 +72,7 @@ const Splash = () => {
                 <div className="splashBody">
                     <h1 className="splashTitle">FLICK</h1>
                     <Link to="/signup"><button  className="signUp btn" data-testid="signup_button">SIGN UP</button></Link>
+                    {/* <button onClick={handleClick} className="btn">RANDOM</button> */}
                 </div>
             </div>
             <div className="attributionContainer">

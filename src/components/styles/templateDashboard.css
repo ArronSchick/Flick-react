@@ -135,4 +135,8 @@ height: 100%;
     outline: none;
 }
 
-/* --------PROFILE VIEW --------------------------------- */
+/* --------RESPONSIVE--------------------------------- */
+
+@media screen and (max-width: 600px) {
+    
+}
