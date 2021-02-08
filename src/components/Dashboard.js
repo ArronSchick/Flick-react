@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +26,7 @@ const Dashboard = () => {
 
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
+  const [showDash, setShowDash] = useState(false)
 
   function handleSignOut(event) {
     event.preventDefault();
@@ -35,6 +36,7 @@ const Dashboard = () => {
       history.push("");
     });
   }
+
   return (
     <div className="dashContainer">
       <Router>
