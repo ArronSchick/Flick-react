@@ -86,6 +86,7 @@ const Profile = () => {
                   id="profilename"
                   value={formState.username}
                   onChange={handleChange}
+                  data-testid="profilename"
                 />
                 <input
                   type="email"
@@ -95,6 +96,7 @@ const Profile = () => {
                   id="email"
                   value={formState.email}
                   onChange={handleChange}
+                  data-testid="email"
                 />
                 <input
                   type="password"
@@ -104,6 +106,7 @@ const Profile = () => {
                   id="password"
                   value={formState.password}
                   onChange={handleChange}
+                  data-testid="password"
                 />
                 <input
                   type="password"
@@ -113,6 +116,8 @@ const Profile = () => {
                   id="confirmpassword"
                   value={formState.password_confirmation}
                   onChange={handleChange}
+                  data-testid="passwordconfirm"
+
                 />
               </div>
               <input
@@ -120,9 +125,11 @@ const Profile = () => {
                 type="submit"
                 onClick={handleSubmit}
                 value="Save changes"
+                data-testid="savebtn"
               />
             </form>
-            <button className="deletebtn" onClick={handleDelete}>
+            <button className="deletebtn" onClick={handleDelete}
+            data-testid="deletebtn">
               DELETE ACCOUNT
             </button>
             <div>

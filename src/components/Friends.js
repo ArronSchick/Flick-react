@@ -44,8 +44,8 @@ export default function Friends() {
                         {formState.errorMessage && <h2>{formState.errorMessage}</h2>}
                     </div>
                     <div className="dtSearch">
-                        <Input placeholder="email" className = "email placeColor" id="email" type='email' name='email' value={formState.email} onChange={handleChange}></Input>
-                        <Button onClick={handleSubmit} value="Add Friend">Add Friend</Button>
+                        <Input placeholder="email" className = "email placeColor" id="email" type='email' name='email' value={formState.email} onChange={handleChange}data-testid="addFriendField"></Input>
+                        <Button onClick={handleSubmit} value="Add Friend" data-testid="addFriendButton">Add Friend</Button>
                     </div>
                     <div className="dtListContainer">
                         <ShowFriends />

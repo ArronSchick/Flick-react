@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <div className="navContainer">
-                {signedIn ? <Link to="/signin" ><button className="signIn btn">SIGN IN</button></Link> : <Link to="/signin" ><button className="signIn btn">SIGN OUT</button></Link>}
+                {signedIn ? <Link to="/signin" ><button className="signIn btn">SIGN IN</button></Link> : <Link to="/signin" ><button className="signIn btn" data-testid="login">SIGN OUT</button></Link>}
         </div>
         
     );
