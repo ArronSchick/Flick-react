@@ -69,7 +69,12 @@ export default function reducer(state, action) {
         friends: state.friends.filter((friend) => friend.username !== action.data)
       };
     }
-
+    case "showFriends": {
+      return {
+        ...state,
+        Friends: []
+      };
+    }
     default:
       return state;
   }

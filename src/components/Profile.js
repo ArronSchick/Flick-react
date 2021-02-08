@@ -40,11 +40,20 @@ const Profile = () => {
         dispatch({ type: "setProfile", data: user });
         sessionStorage.setItem("user", user.username);
         history.push("/dashboard/profile");
-        setSubmitted(true)
+        if (submitted === false){
+          setSubmitted(true)
+        } else {
+          setSubmitted(false)
+        }
+        
+
       })
       .catch((error) => setFormState({
         errorMessage: "Profile update failed, please check if email is valid and passwords match"}))
     setFormState(initialFormState);
+    if (submitted ===true){
+      setSubmitted(false)
+    }
   }
   function handleDelete(event) {
     event.preventDefault();
