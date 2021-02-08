@@ -4,8 +4,6 @@ import "./styles/templateDashboard.css";
 import { useGlobalState } from "../utils/stateContext";
 import { showUser, update, deleteAccount } from "../services/authServices";
 
-let profileName = "USERS NAME";
-
 const Profile = () => {
   const { store, dispatch } = useGlobalState();
   const { profile } = store;
@@ -74,7 +72,6 @@ const Profile = () => {
   return (
     <div className="dtContainer">
       <div className="dtMain">
-        <h1 className="dtTitle">{profileName}</h1>
         <div className="dtCard">
           <div className="forms">
             <h1>Your Profile</h1>

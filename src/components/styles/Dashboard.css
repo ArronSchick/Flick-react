@@ -35,3 +35,24 @@
   padding: 5px;
   background-color: red;
 }
+
+.menuAppear {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .menuAppear {
+    display: flex;
+  }
+  /* .dashContainer {
+    display: none;
+  } */
+  .linkContainer {
+    display: none;
+  }
+  .linkContainers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
