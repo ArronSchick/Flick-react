@@ -172,25 +172,3 @@ export default function Flick() {
 //         </div>
 //     );
 // }
-
-// cy.visit("/")
-//     cy.url().should("include", "/")
-//     cy.fixture("user2.json").then((user) => {
-//         cy.url().should("include", "/signup")
-//         cy.findByTestId('username').type(user.username)
-//         cy.findByTestId('email_signup').type(user.email)
-//         cy.findByTestId('password_signup').type(user.password)
-//         cy.findByTestId('password_confirm').type(user.password)
-//         cy.findByTestId('register').should('be.visible').click()
-//     })
-
-//     cy.visit("/")
-//     cy.url().should("include", "/")
-//     cy.fixture("user3.json").then((user) => {
-//         cy.url().should("include", "/signup")
-//         cy.findByTestId('username').type(user.username)
-//         cy.findByTestId('email_signup').type(user.email)
-//         cy.findByTestId('password_signup').type(user.password)
-//         cy.findByTestId('password_confirm').type(user.password)
-//         cy.findByTestId('register').should('be.visible').click()
-//     })

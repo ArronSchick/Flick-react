@@ -61,7 +61,7 @@ export default function NewUser() {
 							 : null}
 					</div>
 					<div>
-						<Button className="btn" onClick={handleBack}>Back To Home Page</Button>
+						<Button className="btn" onClick={handleBack} data-testid="back">Back To Home Page</Button>
 					</div>
 				</form>
 			</div>
