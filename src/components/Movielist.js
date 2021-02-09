@@ -5,12 +5,13 @@ import {getMovies} from '../services/movieServices'
 import {deleteMovie} from '../services/movieServices'
 import { Button} from "./Styled";
 
+// shows current logged in users liked movie list
 export default function Movielist() {
 
     const {store, dispatch} = useGlobalState()
     const {movies} = store
     const {loggedInUser} = store
-    
+    // API call to get logged in user's movie list using their username
     useEffect(() => {
         dispatch({type: 'setShowDash', data: false})
         getMovies(loggedInUser)
@@ -18,12 +19,11 @@ export default function Movielist() {
     .catch((error) => console.log(error))
     },[dispatch, loggedInUser])
 
+    // deletes movie from users list using movie ID as param 
     function handleDelete(id) {
         deleteMovie(id)
         .then(() => {
             dispatch({type: 'deleteMovie', data: id})
-            // history.push('/dashboard')
-            // history.push('/dashboard/movielist')
         })
     }
 
@@ -34,6 +34,7 @@ export default function Movielist() {
                 <div className="dtCard">
                     <div className="dtListContainer">
                         <ul className="dtList">
+                            {/* iterates through movie list and displays title */}
                             {movies.map(movie => (
                                 <li className="dtListItem" key={movie.id}>
                                     <span>{movie.title}</span>

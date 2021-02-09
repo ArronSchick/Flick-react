@@ -3,12 +3,13 @@ import { getMovies } from "../services/movieServices";
 import { useGlobalState } from "../utils/stateContext";
 import { Link } from "react-router-dom";
 
-
+// fetches a friends movie list from API and displays it
 export default function FriendsMovieList() {
+    // parameter is obtained from URL to use in getMovies API function
   const friendName = window.location.pathname.split("/").pop();
   const { store, dispatch } = useGlobalState();
   const { friendsList } = store;
-
+    // fetch from railsAPI to get friends movie list and updates state
   useEffect(() => {
     getMovies(friendName)
       .then((friendsList) =>
@@ -19,6 +20,7 @@ export default function FriendsMovieList() {
   return (
     <div>
       <div>
+          {/* maps through friends list and displays their list */}
         <h1>{friendName}'s Movie List</h1>
         <ul className="dtList">
           {friendsList.map((movie) => (
@@ -29,12 +31,10 @@ export default function FriendsMovieList() {
         </ul>
       </div>
       <div>
+          {/* link to see Common movie titles */}
         <Link
           to={{
-            pathname: "/dashboard/CommonList",
-            friendProps: {
-              name: { friendsList },
-            },
+            pathname: "/dashboard/CommonList"
           }}
           className="links profilelink"
         >

@@ -4,6 +4,8 @@ import {showUser, signIn} from '../services/authServices'
 import {useGlobalState} from '../utils/stateContext'
 import './styles/Forms.css'
 
+
+// allows user to sign in using email and password
 export default function SignIn({history}) {
 	const initialFormState = {
 		email: '',
@@ -18,11 +20,13 @@ export default function SignIn({history}) {
 			[event.target.name]: event.target.value
 		})
 	}
+	// posts sign in data to validate with railsAPI
 	function handleSubmit(event) {
 		event.preventDefault()
 		signIn(formState)
 		.then(({username,jwt}) => {
 			console.log(username, jwt);
+			// stores username and jwt token in session storage
 			sessionStorage.setItem("token", jwt);
 			sessionStorage.setItem("user", username);
 			dispatch({type: 'setLoggedInUser', data: username})
@@ -32,10 +36,11 @@ export default function SignIn({history}) {
       		.catch((error) => console.log(error));
 			history.push('/dashboard/flick')
 		})
+		// customer error message
 		.catch((error) => setFormState({
 			errorMessage: "Login Failed, please check email and password"}))
 		}
-		
+		// allows user to return to index page
 		function handleBack(event){
 			event.preventDefault()
 			history.push('/')
@@ -52,6 +57,7 @@ export default function SignIn({history}) {
 						<Button className="btn" value="sign in" type="submit" onClick={handleSubmit} data-testid="login">Log in</Button>
 					</div>
 					<div>
+						{/* error message displays if log in details cannot be validated */}
 						{formState.errorMessage && <h2>{formState.errorMessage}</h2>}
 					</div>
 					<div>

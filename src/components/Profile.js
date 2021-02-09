@@ -4,9 +4,11 @@ import "./styles/templateDashboard.css";
 import { useGlobalState } from "../utils/stateContext";
 import { showUser, update, deleteAccount } from "../services/authServices";
 
+// allows user to modify username, user email or password
 const Profile = () => {
   const { store, dispatch } = useGlobalState();
   const { profile } = store;
+  // initial form state has current users username and email pre-populated
   const initialFormState = {
     username: profile.username,
     email: profile.email,
@@ -17,6 +19,7 @@ const Profile = () => {
   const [formState, setFormState] = useState(initialFormState);
   const [submitted, setSubmitted] = useState(false)
 
+  // sets profile states
   useEffect(() => {
     dispatch({type: 'setShowDash', data: false})
     showUser()
@@ -31,6 +34,7 @@ const Profile = () => {
       [event.target.name]: event.target.value,
     });
   }
+  // handles submission and sends post request to railsAPI to update user details
   function handleSubmit(event) {
     event.preventDefault();
     update(formState)
@@ -39,14 +43,14 @@ const Profile = () => {
         dispatch({ type: "setProfile", data: user });
         sessionStorage.setItem("user", user.username);
         history.push("/dashboard/profile");
+        // sets setSubmitted state to display success message
         if (submitted === false){
           setSubmitted(true)
         } else {
           setSubmitted(false)
         }
-        
-
       })
+      // custom error message and also changes setsubmitted state so that if success message was displayed previously it would be removed
       .catch((error) => setFormState({
         errorMessage: "Profile update failed, please check if email is valid and passwords match"}))
     setFormState(initialFormState);
@@ -54,8 +58,10 @@ const Profile = () => {
       setSubmitted(false)
     }
   }
+  // deletes account and removes data from rails API and redirects user to index page
   function handleDelete(event) {
     event.preventDefault();
+    // control flow to confirm whether user wants to delete their account prior to proceeding
     if (window.confirm("Are you sure you want to delete your account?")) {
     deleteAccount()
       .then(() => {
@@ -78,6 +84,7 @@ const Profile = () => {
             <h1>Your Profile</h1>
             <form className="signForm">
               <div className="fields">
+                {/* profile form fields */}
                 <input
                   type="text"
                   className="profilename placeColor"
@@ -134,11 +141,13 @@ const Profile = () => {
               DELETE ACCOUNT
             </button>
             <div>
+              {/* message to be displayed if profile update is successful */}
             {submitted ? 
 							<h1>Success! Your profile has been updated!</h1>
 							 : null}
             </div>
             <div>
+              {/* message to be displayed if there has been an error in updating profile */}
               {formState.errorMessage && <h2>{formState.errorMessage}</h2>}
             </div>
           </div>

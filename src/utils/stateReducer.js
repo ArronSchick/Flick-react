@@ -1,3 +1,4 @@
+// reducer methods to set states
 export default function reducer(state, action) {
   switch (action.type) {
     case "setMovies": {

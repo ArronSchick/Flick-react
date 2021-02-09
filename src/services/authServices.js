@@ -1,5 +1,6 @@
 import railsAPI from "../config/api";
 
+// methods to retrieve and post data to railsAPI
 export async function signUp(data) {
   const response = await railsAPI.post("/api/auth/sign_up", data);
   return response.data;
