@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import "./styles/Dashboard.css";
 import Flick from "./Flick";
-import Genrelist from "./subComponents/Genrelist";
 import Movielist from "./Movielist";
 import Friends from "./Friends";
 import Profile from "./Profile";
@@ -70,7 +69,6 @@ const Dashboard = () => {
                 <Link to={`${url}/profile`} className="links profilelink">
                   Profile
                 </Link>
-                <Route path={`${url}/flick`} component={Genrelist} />
                 <h1>{loggedInUser}</h1>
                 {loggedInUser ? (
                   <Button onClick={handleSignOut}>Sign Out</Button>)
@@ -93,7 +91,6 @@ const Dashboard = () => {
               <Link to={`${url}/profile`} className="links profilelink">
                 Profile
               </Link>
-              <Route path={`${url}/flick`} component={Genrelist} />
               <h1>{loggedInUser}</h1>
               {loggedInUser ? (
                 <Button onClick={handleSignOut}>Sign Out</Button>)

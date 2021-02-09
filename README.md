@@ -25,6 +25,7 @@ When testing locally, change api.js in src/config baseURL to localhost3000(your 
 When testing the site locally for RailsAPI run bundle install, rails db:create, rails db:migrate, rails db:seed
 Type open coverage/index.html in console to view Rspec test coverage
 Type bin/rspec in console to view Rspec tests
+Please use account ***email:*** pikachu@test.com ***password:*** password1 if a premade account is needed for testing purposes i.e adding a friend with an existing movie list.
 
 When testing the site locally for React run yarn install
 For Cypress testing for front end:
@@ -33,6 +34,10 @@ go to rails and type psql.
 rails db:create
 rails db:migrate
 start rails test server with 'rails s -e test'
+create a file called .env.development in the root directory of the Application containing the following
+**PORT = 3001**
+**BROWSER = none**
+
 
 # Flick
 
@@ -139,6 +144,12 @@ Adam wants to be his gatherings to be a blast for everyone and have an easy way 
 - As Adam I want to be able to set up watchlists quickly for those who do not have the application (signing up using google account)
 - As Adam I want to be able to filter quickly be genres
 - As Adam I want to see what my friends have already watched
+
+#### TESTING: CYPRESS
+
+![](img/cypress1.jpg)
+![](img/cypress2.jpg)
+![](img/cypress3.jpg)
 
 ---
 

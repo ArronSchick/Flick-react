@@ -4,13 +4,12 @@ import {
 } from "react-router-dom";
 import '../styles/Navbar.css';
 
+// --------navbar containing signin link on the splash page which routes to signin form---------
 const Navbar = () => {
-
-    let signedIn = true
 
     return (
         <div className="navContainer">
-                {signedIn ? <Link to="/signin" ><button className="signIn btn">SIGN IN</button></Link> : <Link to="/signin" ><button className="signIn btn" data-testid="login">SIGN OUT</button></Link>}
+                <Link to="/signin" ><button className="signIn btn">SIGN IN</button></Link>
         </div>
         
     );
