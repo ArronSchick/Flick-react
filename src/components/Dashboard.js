@@ -23,10 +23,9 @@ import ChooseMovie from "./ChooseMovie"
 const Dashboard = () => {
   let history = useHistory();
   let { url } = useRouteMatch();
-
   const { store, dispatch } = useGlobalState();
-  const { loggedInUser } = store;
-  const [showDash, setShowDash] = useState(false)
+  const { loggedInUser, showDash } = store;
+  // const [showDash, setShowDash] = useState(false)
 
   function handleSignOut(event) {
     event.preventDefault();
@@ -40,9 +39,9 @@ const Dashboard = () => {
   function handleClick(event) {
     event.preventDefault()
     if (showDash === false){
-      setShowDash(true)
+      dispatch({type: "setShowDash", data: true})
     } else {
-      setShowDash(false)
+      dispatch({type: "setShowDash", data: false})
     }
   }
   console.log(showDash)
@@ -55,7 +54,7 @@ const Dashboard = () => {
     <div>
       {showDash ? 
           <div className="linkContainers">
-            <Link to={`${url}/flick`} className="links flicklink">
+            <Link to={`${url}/flick`} className="links flicklink" >
               Flick
             </Link>
             <Link to={`${url}/movielist`} className="links movielink">

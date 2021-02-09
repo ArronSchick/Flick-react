@@ -19,6 +19,7 @@ function App() {
     friendsList: [],
     commonTitles: [],
     randomMovie: [],
+    showDash: false,
     friends: [],
   };
   const [store, dispatch] = useReducer(stateReducer, initialState);

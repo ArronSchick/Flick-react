@@ -18,6 +18,7 @@ const Profile = () => {
   const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
+    dispatch({type: 'setShowDash', data: false})
     showUser()
       .then((user) => dispatch({ type: "setProfile", data: user }))
       .catch((error) => console.log(error));

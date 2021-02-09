@@ -13,6 +13,7 @@ const ShowFriend = () => {
     console.log(loggedInUser)
     
     useEffect(()=> {
+        dispatch({type: 'setShowDash', data: false})
         showFriends(loggedInUser)
         .then((friends) => dispatch({type: 'setFriends', data:friends}))
         .catch((error) => dispatch({type: 'setFriends', data:[]}))
