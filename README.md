@@ -1,3 +1,39 @@
+# IMPORTANT LINKS
+
+Netlify website
+https://filmflicks.netlify.app/
+
+Rails heroku API
+https://filmflicks.herokuapp.com/
+
+Trello board
+https://trello.com/b/apCnQk2H/t3a2-full-stack-app
+
+Github repository for react front end
+https://github.com/robynsdev/Flick-react
+
+Github repository for rails back end
+https://github.com/robynsdev/Flick
+
+Live production testing video link:
+https://www.youtube.com/watch?v=DXiePsRm3uk&feature=youtu.be&ab_channel=VinsonWang
+
+# IMPORTANT INSTRUCTIONS PLEASE FOLLOW
+
+When testing locally, change api.js in src/config baseURL to localhost3000(your local railsAPI should be run on this server) and your local react server should be on localhost3001. Comment out baseURL: "https://filmflicks.herokuapp.com",
+
+When testing the site locally for RailsAPI run bundle install, rails db:create, rails db:migrate, rails db:seed
+Type open coverage/index.html in console to view Rspec test coverage
+Type bin/rspec in console to view Rspec tests
+
+When testing the site locally for React run yarn install
+For Cypress testing for front end:
+go to rails and type psql.
+\c to Flick_test
+rails db:create
+rails db:migrate
+start rails test server with 'rails s -e test'
+
 # Flick
 
 A movie app
@@ -171,6 +207,3 @@ Adam wants to be his gatherings to be a blast for everyone and have an easy way 
 ![](img/trello_20210124.png)
 
 ![image-20210124221127529](/Users/robyn/Library/Application Support/typora-user-images/image-20210124221127529.png)
-
-Live production testing video link:
-https://www.youtube.com/watch?v=DXiePsRm3uk&feature=youtu.be&ab_channel=VinsonWang
