@@ -35,3 +35,33 @@
   padding: 5px;
   background-color: red;
 }
+
+.menuAppear {
+  display: none;
+}
+
+.chooseMovieContainer h1 {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.chooseMovieLink {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .menuAppear {
+    display: flex;
+  }
+  .linkContainer {
+    display: none;
+  }
+  .linkContainers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

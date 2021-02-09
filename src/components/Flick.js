@@ -21,7 +21,7 @@ export default function Flick() {
     { poster_path: noImage, original_title: titleFlickDefault },
   ];
 
-  const { store } = useGlobalState();
+  const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
   const addMovieToWatchlist = {
     title: null,
@@ -50,15 +50,16 @@ export default function Flick() {
         })
       setNext(0);
     })();
-  }, [callApi, loggedInUser]);
+  }, [callApi, loggedInUser, dispatch]);
 
   useEffect(() => {
+    dispatch({type: 'setShowDash', data: false})
     setWatchlist({
       title: (data[next].original_title),
       movie_id: (data[next].id),
       user_id: loggedInUser
       })
-  }, [next, data, loggedInUser])
+  }, [next, data, loggedInUser, dispatch])
 
   const handleClick = (e) => {
     if (next !== 2) {

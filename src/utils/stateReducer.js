@@ -75,6 +75,12 @@ export default function reducer(state, action) {
         Friends: []
       };
     }
+    case "setShowDash": {
+      return {
+        ...state,
+        showDash: action.data
+      };
+    }
     default:
       return state;
   }

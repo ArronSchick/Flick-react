@@ -12,7 +12,8 @@ export default function Movielist() {
     const {loggedInUser} = store
     
     useEffect(() => {
-		getMovies(loggedInUser)
+        dispatch({type: 'setShowDash', data: false})
+        getMovies(loggedInUser)
 		.then((movies) => dispatch({type: 'setMovies', data: movies}))
     .catch((error) => console.log(error))
     },[dispatch, loggedInUser])

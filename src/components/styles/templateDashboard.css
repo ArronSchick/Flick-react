@@ -1,142 +1,181 @@
 .dtContainer {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0px 0px 20px;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 0px 20px;
 }
 
 .dtMain {
-display: flex;
-align-items: center;
-width: 100%;
-flex-direction: column;
-height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
 }
 
 .dtTitle {
-    width: 50vw;
-    font-size: 40px;
+  width: 50vw;
+  font-size: 40px;
 }
 
 .dtCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(rgb(36, 36, 36), rgb(58, 58, 58));
-    border: 2px solid rgba(68, 166, 223, 0.2);
-    height: 100%;
-    width: 50vw;
-    border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgb(36, 36, 36), rgb(58, 58, 58));
+  border: 2px solid rgba(68, 166, 223, 0.2);
+  height: 100%;
+  width: 50vw;
+  border-radius: 5px;
 }
 
 .dtSearch {
-    margin: 50px 0px 20px 0px;
-    padding-left: 30px;
-    width: 100%;    
+  margin: 50px 0px 20px 0px;
+  padding-left: 30px;
+  width: 100%;
 }
 
 .dtListContainer {
-    
-    display: flex;
-    width: 100%;
-    margin: 0px 30px 0px 30px;
+  display: flex;
+  width: 100%;
+  margin: 0px 30px 0px 30px;
 }
 
 .dtList {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    flex-grow: 1;
-    padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  flex-grow: 1;
+  padding-right: 40px;
 }
 
 .dtListItem {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    color: rgba(163, 197, 211, 0.966);
-    border-bottom: dotted 1px rgba(68, 166, 223, 0.4);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: rgba(163, 197, 211, 0.966);
+  border-bottom: dotted 1px rgba(68, 166, 223, 0.4);
+}
+
+.dtListContainer2 {
+  display: flex;
+  width: 200px;
+  margin: 0px 30px 0px 30px;
+}
+
+.dtListItem2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 10px;
+  color: rgba(163, 197, 211, 0.966);
+  border-bottom: dotted 1px rgba(68, 166, 223, 0.4);
 }
 
 /* --------FLICK VIEW --------------------------------- */
 
 .movie {
-    height: 100%;
-    text-align: center;
-    background-color: rgb(34, 34, 34);
-    width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(34, 34, 34);
+  width: 100%;
 }
 .swipeButtons {
-    width: 100%;
-    display: flex;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    justify-content: space-around;
+  width: 100%;
+  display: flex;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  justify-content: space-around;
 }
 
 .swipeBtn {
-    width: 120px;
-    height: 120px;
-    font-size: 50px;
-    outline: none;
-    transition: 0.1s;
+  width: 120px;
+  height: 120px;
+  font-size: 50px;
+  outline: none;
+  transition: 0.1s;
 }
 
 .leftSwipe {
- background-color: rgb(107, 180, 12);
- border: 2px solid #609635;
- border-radius: 5px;
- color: rgb(227, 255, 209);
+  background-color: rgb(107, 180, 12);
+  border: 2px solid #609635;
+  border-radius: 5px;
+  color: rgb(227, 255, 209);
 }
 .rightSwipe {
-    background-color: rgb(241, 55, 55);
-    border: 2px solid #963c3c;
-    border-radius: 5px;
-    color: rgb(255, 209, 209);
+  background-color: rgb(241, 55, 55);
+  border: 2px solid #963c3c;
+  border-radius: 5px;
+  color: rgb(255, 209, 209);
 }
 .leftSwipe:hover {
-    border:solid 1px rgb(145, 255, 43);
-    box-shadow: 2px 2px 10px rgba(145, 255, 43, 1);
-    color: rgb(255, 255, 255);
-    background-color: rgb(148, 216, 60);
-    font-size: 52px;
+  border: solid 1px rgb(145, 255, 43);
+  box-shadow: 2px 2px 10px rgba(145, 255, 43, 1);
+  color: rgb(255, 255, 255);
+  background-color: rgb(148, 216, 60);
+  font-size: 52px;
 }
 
-.leftSwipe:active{
-    background-color: rgb(222, 241, 197);
-    font-size: 49px;
+.leftSwipe:active {
+  background-color: rgb(222, 241, 197);
+  font-size: 49px;
 }
 
 .rightSwipe:hover {
-    border:solid 1px rgb(255, 146, 138);
-    box-shadow: 2px 2px 10px rgb(255, 68, 43);
-    color: rgb(255, 255, 255);
-    background-color: rgb(240, 118, 118);
-    font-size: 52px;
+  border: solid 1px rgb(255, 146, 138);
+  box-shadow: 2px 2px 10px rgb(255, 68, 43);
+  color: rgb(255, 255, 255);
+  background-color: rgb(240, 118, 118);
+  font-size: 52px;
 }
 
-.rightSwipe:active{
-    background-color: rgb(241, 207, 197);
-    font-size: 49px;
+.rightSwipe:active {
+  background-color: rgb(241, 207, 197);
+  font-size: 49px;
 }
 
 .posterFlick {
-    padding-top: 2vh;
-    width: 20vw;
+  padding-top: 2vh;
+  width: 20vw;
 }
 
 /* --------MOVIE VIEW --------------------------------- */
 
 /* --------FRIENDS VIEW --------------------------------- */
 .friendsSearchField {
-    min-width: 300px;
-    max-width: 500px;
-    height: 30px;
-    font-size: 18px;
-    outline: none;
+  min-width: 300px;
+  max-width: 500px;
+  height: 30px;
+  font-size: 18px;
+  outline: none;
 }
 
-/* --------RESPONSIVE--------------------------------- */
-
-@media screen and (max-width: 600px) {
-    
+/* --------Responsive --------------------------------- */
+@media (max-width: 500px) {
+  .posterFlick {
+    width: 60vw;
+  }
+  .dtCard {
+    width: 90vw;
+  }
+  .dtListItem {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 10px;
+    color: rgba(163, 197, 211, 0.966);
+    border-bottom: dotted 1px rgba(68, 166, 223, 0.4);
+  }
+  .dtListItem2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 10px;
+    color: rgba(163, 197, 211, 0.966);
+    border-bottom: dotted 1px rgba(68, 166, 223, 0.4);
+  }
+  .dtListContainer2 {
+    display: flex;
+    width: 200px;
+    margin: 0px 30px 0px 30px;
+  }
 }

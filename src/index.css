@@ -27,7 +27,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -52,7 +52,8 @@ code {
   background-color: rgba(160, 200, 238, 0.6);
 }
 
-.links, .links:visited {
+.links,
+.links:visited {
   list-style-type: none;
   text-decoration: none;
   width: 130px;
@@ -74,5 +75,4 @@ code {
 
 .links:active {
   background-color: rgba(104, 177, 245, 0.4);
-
 }
