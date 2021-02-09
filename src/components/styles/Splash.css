@@ -63,8 +63,9 @@
   }
 
   .attributionContainer {
+    margin-top: 3vh;
     display: flex;
-    padding: 1vw;
+    padding: 2vw;
     border-top: solid 1px rgba(104, 177, 245, 0.4);
   }
 

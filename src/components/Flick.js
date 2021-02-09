@@ -33,12 +33,11 @@ export default function Flick() {
   const [data, setData] = useState(defaultState);
   const [next, setNext] = useState(0);
   const [callApi, setCallApi] = useState(false);
-  // const yearParam = '&year=';
 
   useEffect(() => {
     (async function fetchData() {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${randomNumber(
+        `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-AU&certification_country=US&certification.lte=PG-13&sort_by=popularity.desc&page=${randomNumber(
           1,
           500
         )}&include_adult=false`
@@ -49,6 +48,7 @@ export default function Flick() {
         movie_id: (response.data.results[0].id),
         user_id: loggedInUser
         })
+      setNext(0);
     })();
   }, [callApi, loggedInUser, dispatch]);
 
@@ -62,14 +62,15 @@ export default function Flick() {
   }, [next, data, loggedInUser, dispatch])
 
   const handleClick = (e) => {
-    setNext((prevState) => prevState + 1);
+    if (next !== 2) {
+      setNext((prevState) => prevState + 1);
+    }
 
     if (e.target.name === "like") {
       storeMovies(watchlist)
     }
-    if (next === 19) {
+    if (next === 2) {
       setCallApi(!callApi);
-      setNext(0);
     }
   };
 
