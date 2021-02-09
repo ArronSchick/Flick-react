@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useGlobalState } from "../utils/stateContext";
 import { getMovies } from "../services/movieServices";
 import { Link } from "react-router-dom";
+import './styles/templateDashboard.css';
 
 // Find common titles between a user and their friend's movie lists
 export default function CommonList() {
