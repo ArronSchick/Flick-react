@@ -1,5 +1,6 @@
 import railsAPI from '../config/api';
 
+// methods to retrieve and make changes to railsAPI movies model
 export async function getMovies(username) {
     const response = await railsAPI.get(`/api/watchlists/${username}`)
     return response.data

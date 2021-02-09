@@ -71,6 +71,15 @@
   border-bottom: dotted 1px rgba(68, 166, 223, 0.4);
 }
 
+.dtSeeList {
+  border: 1px solid;
+  cursor: pointer;
+  color: white;
+  padding: 0.5em;
+  margin: 1em;
+  font-family: Arial, sans-serif;
+}
+
 /* --------FLICK VIEW --------------------------------- */
 
 .movie {

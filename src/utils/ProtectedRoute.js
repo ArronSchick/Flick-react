@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useGlobalState } from "./stateContext";
 
+// restricting access to non-named routes and preventing non logged in users to access protected routes
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
   const { store } = useGlobalState();
   const { loggedInUser } = store;

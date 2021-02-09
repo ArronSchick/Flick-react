@@ -1,6 +1,4 @@
-/* * {
-    border: 1px red solid;
-} */
+/* Styling for dashboard and related components */
 
 .dashContainer {
   display: flex;
@@ -52,6 +50,7 @@
   width: 100%;
 }
 
+/* Media Breakpoints for use for mobile */
 @media (max-width: 500px) {
   .menuAppear {
     display: flex;

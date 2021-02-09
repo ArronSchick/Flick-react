@@ -1,5 +1,6 @@
 import railsAPI from '../config/api';
 
+// methods to retrieve and store data in RailsAPI in relation to friends
 export async function addFriends(data) {
     const response = await railsAPI.post("/api/friendships", {
         "email": `${data.email}`

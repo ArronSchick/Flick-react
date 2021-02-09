@@ -10,6 +10,7 @@ import { StateContext } from "./utils/stateContext";
 import stateReducer from "./utils/stateReducer.js";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 
+// contains initial states that we want to be accessed globally
 function App() {
   const initialState = {
     movies: [],
