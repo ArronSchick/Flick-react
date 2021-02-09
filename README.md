@@ -25,7 +25,13 @@ When testing locally, change api.js in src/config baseURL to localhost3000(your 
 When testing the site locally for RailsAPI run bundle install, rails db:create, rails db:migrate, rails db:seed
 Type open coverage/index.html in console to view Rspec test coverage
 Type bin/rspec in console to view Rspec tests
-Please use account ***email:*** pikachu@test.com ***password:*** password1 if a premade account is needed for testing purposes i.e adding a friend with an existing movie list.
+Accounts 
+username: "pikachu", email: "pikachu@test.com", password: "password1"
+username: "charmander", email: "char@test.com", password: "password2"
+username: "squirtle", email: "squirtle@test.com", password: "password3" 
+are premade and can be used for testing purposes if needed i.e adding a friend with an existing movie list.
+
+
 
 When testing the site locally for React run yarn install
 For Cypress testing for front end:
