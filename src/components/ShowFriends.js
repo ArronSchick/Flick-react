@@ -30,11 +30,13 @@ const ShowFriend = () => {
         <div className='dtListContainer'>
             <ul className="dtList">
                 {friends.map(friend => 
-                <li className="dtListItem" key={friend.id}>
+                <li className="dtListItem2" key={friend.id}>
                 <h1>{friend.username}</h1>
-                <Link to ={`/dashboard/FriendsMovieList/${friend.username}`}>See their List!
+                <div className="dtListContainer2">
+                <Link to={`/dashboard/FriendsMovieList/${friend.username}`} className="sc-dlfnbm sc-hKgILt hDTOlf wJCRh">See their List!
                 </Link>
                 <Button onClick = {() => handleDelete(friend.username)}>Delete</Button>
+                </div>
                 </li>)}
             </ul>
             <div>

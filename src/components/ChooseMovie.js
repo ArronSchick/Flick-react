@@ -1,6 +1,7 @@
 import React from "react";
 import { useGlobalState } from "../utils/stateContext";
 import { Link } from "react-router-dom";
+import "./styles/Dashboard.css";
 
 export default function ChooseMovie(props) {
     const { store} = useGlobalState();
@@ -8,9 +9,9 @@ export default function ChooseMovie(props) {
     const randomMovie = commonTitles[Math.floor(Math.random() * commonTitles.length)]
         
     return(
-        <div>
+        <div className="chooseMovieContainer">
             <h1>{randomMovie}</h1>
-            <Link to={{pathname: "/dashboard/ChooseMovie",}} className="links profilelink">Don't like this one? Choose another movie at random!</Link>
+            <Link to={{pathname: "/dashboard/ChooseMovie",}} className="links chooseMovieLink">Don't like this one? Choose another movie at random!</Link>
         </div>
     )
 }

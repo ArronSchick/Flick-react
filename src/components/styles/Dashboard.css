@@ -40,6 +40,18 @@
   display: none;
 }
 
+.chooseMovieContainer h1 {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.chooseMovieLink {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 @media (max-width: 500px) {
   .menuAppear {
     display: flex;
